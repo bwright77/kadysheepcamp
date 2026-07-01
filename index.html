@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kady Youth Sheep Camp — coming soon</title>
+<meta name="description" content="Kady Youth Sheep Camp Apprenticeship — keeping Diné lifeways alive through the raising of sheep and goats, land, and weaving. Teec Nos Pos, Navajo Nation. Full site coming soon.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kady Youth Sheep Camp">
+<meta property="og:description" content="Keeping Diné lifeways alive through sheep, land, and weaving. Full site coming soon.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:url" content="https://kadysheepcamp.org">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --night:#122634;
+    --night-deep:#0C1922;
+    --teal:#0D475C;
+    --bone:#EDE3CC;
+    --wheat:#DEC394;
+    --rust:#BC5A32;
+    --rust-hi:#D6774C;
+    --display:'Alfa Slab One', Rockwell, Georgia, serif;
+    --body:'Work Sans', system-ui, sans-serif;
+    --mono:'Space Mono', ui-monospace, monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--night);
+    color:var(--bone);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:relative;z-index:3;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:20px 24px;max-width:1080px;margin:0 auto;
+  }
+  .topbar .brand{display:flex;align-items:center;gap:12px;font-family:var(--mono);
+    font-size:12px;letter-spacing:2px;color:var(--wheat);text-transform:uppercase}
+  .topbar .brand svg{width:34px;height:34px;flex:0 0 auto}
+  .pill{
+    font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    border:1px solid rgba(214,119,76,.5);color:var(--rust-hi);
+    padding:6px 12px;border-radius:999px;white-space:nowrap;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;min-height:calc(100svh - 74px);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:24px 24px 64px;overflow:hidden;
+  }
+  /* abduction beam — the signature */
+  .beam{
+    position:absolute;top:-6%;left:50%;translate:-50% 0;
+    width:min(560px,86vw);height:78%;
+    background:linear-gradient(to bottom,
+      rgba(222,195,148,.30), rgba(222,195,148,.10) 42%, rgba(222,195,148,0) 78%);
+    clip-path:polygon(42% 0,58% 0,88% 100%,12% 100%);
+    filter:blur(2px);z-index:0;pointer-events:none;
+    animation:beamPulse 7s ease-in-out infinite;
+  }
+  @keyframes beamPulse{50%{opacity:.72}}
+  .stars{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .stars i{
+    position:absolute;width:2px;height:2px;border-radius:50%;background:var(--bone);
+    opacity:.55;animation:tw 4s ease-in-out infinite;
+  }
+  @keyframes tw{0%,100%{opacity:.2}50%{opacity:.8}}
+
+  .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+  .eyebrow{
+    font-family:var(--mono);font-size:12px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--wheat);margin:0 0 22px;
+  }
+  .logo{
+    width:min(340px,68vw);height:auto;border-radius:8px;
+    box-shadow:0 24px 60px -24px rgba(0,0,0,.7);
+    animation:rise .9s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}}
+  h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:-1px;padding:0;border:0}
+  .lede{
+    font-size:clamp(18px,2.4vw,23px);max-width:30ch;margin:30px auto 4px;
+    color:var(--bone);
+  }
+  .lede b{font-weight:600;color:var(--wheat)}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:30px 0 22px}
+  .btn{
+    font-family:var(--mono);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
+    text-decoration:none;padding:14px 22px;border-radius:8px;transition:transform .15s ease,background .2s ease;
+  }
+  .btn-primary{background:var(--rust);color:#fff}
+  .btn-primary:hover{background:var(--rust-hi);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid rgba(237,227,204,.35);color:var(--bone)}
+  .btn-ghost:hover{border-color:var(--bone);transform:translateY(-2px)}
+  .status{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:rgba(237,227,204,.55);margin-top:8px}
+  .status .dot{color:var(--rust-hi)}
+
+  /* ---------- mission band ---------- */
+  .mission{background:var(--night-deep);padding:80px 0}
+  .mission .grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:center}
+  .mission figure{margin:0;position:relative}
+  .mission img{border-radius:12px;width:100%;object-fit:cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+  .mission figcaption{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:rgba(237,227,204,.5);margin-top:12px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--rust-hi);margin:0 0 16px}
+  .mission h2{font-family:var(--display);font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin:0 0 20px;color:var(--bone)}
+  .mission p{font-size:17px;color:rgba(237,227,204,.85);margin:0 0 18px}
+  .mission .attr{font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--wheat)}
+  .values{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:var(--mono);font-size:12px;letter-spacing:1px;border:1px solid rgba(222,195,148,.35);
+    color:var(--wheat);padding:8px 14px;border-radius:999px}
+  .chip span{color:rgba(237,227,204,.55)}
+
+  /* ---------- footer ---------- */
+  footer{padding:44px 0;border-top:1px solid rgba(237,227,204,.12)}
+  footer .grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center}
+  footer .meta{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;color:rgba(237,227,204,.5)}
+  footer a.link{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;color:var(--wheat);text-decoration:none;margin-right:20px}
+  footer a.link:hover{color:var(--rust-hi)}
+
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust-hi);outline-offset:3px;border-radius:6px}
+
+  @media (max-width:760px){
+    .mission .grid{grid-template-columns:1fr;gap:32px}
+    .mission{padding:56px 0}
+    .topbar .brand span{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <g fill="#EDE3CC">
+        <path d="M50,50 C40,43 29,41 22,48 C15,55 14,64 21,71 C18,63 21,55 29,52 C37,49 45,52 50,56 Z"/>
+        <path d="M70,50 C80,43 91,41 98,48 C105,55 106,64 99,71 C102,63 99,55 91,52 C83,49 75,52 70,56 Z"/>
+        <path d="M41,58 C34,60 30,67 34,72 C38,70 43,65 44,60 Z"/>
+        <path d="M79,58 C86,60 90,67 86,72 C82,70 77,65 76,60 Z"/>
+        <path d="M47,48 C43,53 41,59 43,67 C44,76 49,86 60,94 C71,86 76,76 77,67 C79,59 77,53 73,48 C68,45 52,45 47,48 Z"/>
+        <path d="M55,90 C56,101 58,108 60,108 C62,108 64,101 65,90 C63,93 57,93 55,90 Z"/>
+      </g>
+      <g fill="#122634"><ellipse cx="52.5" cy="65" rx="2.4" ry="3.2"/><ellipse cx="67.5" cy="65" rx="2.4" ry="3.2"/></g>
+    </svg>
+    <span>kadysheepcamp.org</span>
+  </div>
+  <div class="pill">Site in progress</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="beam" aria-hidden="true"></div>
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1>Kady Youth Sheep Camp</h1>
+      <p class="eyebrow">Teec Nos Pos · Navajo Nation · 36.9°N 109.1°W</p>
+      <img class="logo" src="assets/logo-primary.png"
+           alt="Kady Youth Sheep Camp — a goat lifted in a beam of light beneath a night sky">
+      <p class="lede">Keeping <b>Diné lifeways</b> alive through the raising of sheep and goats, the land, and the loom.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Support the camp</a>
+        <a class="btn btn-ghost" href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">Follow on Facebook</a>
+      </div>
+      <p class="status"><span class="dot">●</span> Full site landing soon</p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <div class="wrap grid">
+      <figure>
+        <img src="assets/photo-camp.jpg" alt="A young herder in a wide-brim hat holds a lamb in the high-desert juniper country of the Navajo Nation">
+        <figcaption>At camp, high-desert juniper country · Navajo Nation</figcaption>
+      </figure>
+      <div>
+        <p class="kicker">The apprenticeship</p>
+        <h2>Returning to remember who we are.</h2>
+        <p>The Kady Youth Sheep Camp Apprenticeship carries the heartbeat of our ancestors — a path of returning to the lifeways of sheep and goats, our gentle teachers of patience, balance, and care.</p>
+        <p>Through the work of our hands and hearts — herding, tending the land, gathering herbs, shaping clay, and weaving fiber — the young learn the old songs again, and keep the fire of our Diné lifeways alive.</p>
+        <p class="attr">— Roy Kady, Kady Youth Sheep Camp</p>
+        <div class="values">
+          <span class="chip">Hozhó <span>· beauty &amp; balance</span></span>
+          <span class="chip">Ké <span>· sacred kinship</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap grid">
+    <div>
+      <a class="link" href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">Facebook</a>
+      <a class="link" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Donate</a>
+    </div>
+    <p class="meta">© <span id="yr"></span> Kady Youth Sheep Camp · Teec Nos Pos, AZ</p>
+  </div>
+</footer>
+
+<script>
+  // starfield
+  (function(){
+    var box=document.getElementById('stars'); if(!box) return;
+    var n=44, frag=document.createDocumentFragment();
+    for(var i=0;i<n;i++){
+      var s=document.createElement('i');
+      s.style.left=(Math.random()*100)+'%';
+      s.style.top=(Math.random()*100)+'%';
+      s.style.animationDelay=(Math.random()*4)+'s';
+      s.style.opacity=(0.25+Math.random()*0.5).toFixed(2);
+      var sz=(Math.random()<0.2?3:2); s.style.width=sz+'px'; s.style.height=sz+'px';
+      frag.appendChild(s);
+    }
+    box.appendChild(frag);
+  })();
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

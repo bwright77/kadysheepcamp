@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /private/tmp/claude-501 /var/folders /tmp ~/Downloads ~/Desktop -type f \\\\\\( -iname \"*.png\" -o -iname \"*.jpg\" -o -iname \"*.jpeg\" \\\\\\) -newermt \"2026-07-01 20:00\" 2>/dev/null | head -30; echo \"---clipboard check---\"; which pngpaste 2>/dev/null || echo \"no pngpaste\")",
+      "Read(//private/var/folders/**)",
+      "Bash(cat)",
+      "Bash(cp /Users/benjaminwright/Sites/kadysheepcamp/brand/kady_sheep_mark.svg /private/tmp/claude-501/-Users-benjaminwright-Sites-kadysheepcamp/f49398a0-481d-4435-8c31-588ef1c53552/scratchpad/kady_sheep_mark.svg)",
+      "Bash(qlmanage -t -s 600 -o /private/tmp/claude-501/-Users-benjaminwright-Sites-kadysheepcamp/f49398a0-481d-4435-8c31-588ef1c53552/scratchpad preview_night.svg)"
+    ]
+  }
+}

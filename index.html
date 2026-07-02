@@ -70,8 +70,8 @@
   }
   /* abduction beam — the signature */
   .beam{
-    position:absolute;top:-10%;left:50%;translate:-50% 0;
-    width:min(720px,96vw);height:108%;
+    position:absolute;top:0;left:50%;translate:-50% 0;
+    width:min(720px,96vw);height:108svh;
     background:linear-gradient(to bottom,
       rgba(222,195,148,.30), rgba(222,195,148,.10) 46%, rgba(222,195,148,0) 82%);
     clip-path:polygon(42% 0,58% 0,88% 100%,12% 100%);
@@ -151,6 +151,8 @@
 </head>
 <body>
 
+<div class="beam" aria-hidden="true"></div>
+
 <header class="topbar">
   <div class="brand">
     <img src="brand/kady_sheep_mark.svg" alt="" aria-hidden="true">
@@ -161,7 +163,6 @@
 
 <main>
   <section class="hero">
-    <div class="beam" aria-hidden="true"></div>
     <div class="stars" id="stars" aria-hidden="true"></div>
     <div class="hero-inner">
       <h1>Kady Youth Sheep Camp</h1>

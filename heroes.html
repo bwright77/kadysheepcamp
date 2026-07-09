@@ -19,6 +19,11 @@
     --mono:'Space Mono', ui-monospace, monospace;
   }
   *{box-sizing:border-box}
+  /* The comps are authored at 1280px and scaled down with CSS zoom. iOS
+     Safari's text auto-sizing would re-inflate wide body-text blocks on top
+     of that scale, overlapping the lines — pin it off so text scales with
+     the zoom like everything else. */
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   html,body{margin:0}
   body{
     background:#0B1016;

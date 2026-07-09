@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand Guidelines — Kady Youth Sheep Camp</title>
+<meta name="description" content="Brand guidelines for Kady Youth Sheep Camp — the approved ram mark, color palette, and type. Teec Nos Pos, Navajo Nation.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --night:#122634;
+    --night-deep:#0C1922;
+    --bone:#EDE3CC;
+    --wheat:#DEC394;
+    --rust:#BC5A32;
+    --ink:#122634;
+    --ink-85:rgba(18,38,52,0.85);
+    --ink-60:rgba(18,38,52,0.6);
+    --ink-50:rgba(18,38,52,0.5);
+    --ink-45:rgba(18,38,52,0.45);
+    --hair:rgba(18,38,52,0.15);
+    --display:'Alfa Slab One', Rockwell, Georgia, serif;
+    --body:'Work Sans', system-ui, sans-serif;
+    --mono:'Space Mono', ui-monospace, monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:#ece8dd;
+    font-family:var(--body);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding:48px 24px;
+  }
+  img{max-width:100%;display:block}
+  a{color:var(--rust);text-decoration:none}
+  a:hover{color:var(--night)}
+
+  /* ---------- the sheet ---------- */
+  .sheet{
+    max-width:720px;margin:0 auto;
+    background:#fff;
+    border-radius:3px;
+    box-shadow:0 2px 14px rgba(20,20,19,0.12);
+    padding:64px 56px 40px;
+  }
+  @media (max-width:640px){
+    body{padding:20px 12px}
+    .sheet{padding:32px 22px 28px}
+  }
+
+  /* running footer */
+  .doc-footer{
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:9px;letter-spacing:0.22em;
+    color:var(--ink-45);margin-top:40px;padding-top:8px;
+  }
+
+  /* ---------- cover band ---------- */
+  .cover{
+    background:var(--night);border-radius:10px;
+    padding:56px 48px;
+    display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center;
+  }
+  .cover>img{width:260px;max-width:80%;height:auto;object-fit:contain}
+  .cover-title{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .cover-title h1{
+    font-family:var(--display);font-weight:400;font-size:40px;line-height:1.15;
+    color:var(--bone);margin:0;
+  }
+  .cover-rule{width:100px;height:3px;background:var(--rust)}
+  .cover-meta{font-family:var(--mono);font-size:13px;letter-spacing:0.24em;color:var(--wheat)}
+
+  .intro{font-size:16px;line-height:1.7;color:var(--ink-85);margin:36px 0 0;max-width:620px}
+
+  /* ---------- section headers ---------- */
+  .section-head{display:flex;flex-direction:column;gap:10px;margin-top:52px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.24em;color:var(--rust)}
+  .section-head h2{font-family:var(--display);font-weight:400;font-size:27px;line-height:1.2;margin:0}
+  .lead{font-size:15px;line-height:1.7;color:var(--ink-85);margin:16px 0 0;max-width:620px}
+
+  h3.sub{font-family:var(--display);font-weight:400;font-size:19px;margin:36px 0 0}
+  p.note{font-size:15px;line-height:1.7;color:var(--ink-85);margin:12px 0 0;max-width:620px}
+
+  /* ---------- figures / grids ---------- */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+  figure{margin:0;display:flex;flex-direction:column;gap:8px}
+  figcaption{
+    font-family:var(--mono);font-size:10px;letter-spacing:0.16em;
+    color:var(--ink-60);line-height:1.6;
+  }
+  .swatch-tile{border-radius:8px;height:170px;display:flex;align-items:center;justify-content:center}
+  .swatch-tile img{width:170px;max-width:70%;height:auto;object-fit:contain}
+  .on-night{background:var(--night)}
+  .on-deep{background:var(--night-deep)}
+  .on-bone{background:var(--bone);border:1px solid var(--hair)}
+  .on-white{background:#fff;border:1px solid var(--hair)}
+
+  /* clear space + min size */
+  .diagram{
+    border:1px solid var(--hair);border-radius:8px;height:190px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .clearspace{border:1.5px dashed var(--rust);padding:40px 56px;border-radius:4px}
+  .clearspace img{width:130px;height:auto;object-fit:contain;display:block}
+  .minsize{
+    align-items:flex-end;gap:28px;padding:0 24px 34px;
+  }
+  .minsize .step{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .minsize .step img{object-fit:contain;height:auto}
+  .minsize .tag{font-family:var(--mono);font-size:10px;color:var(--ink-50)}
+
+  /* lockup */
+  .lockup{
+    background:var(--night);border-radius:8px;padding:34px 40px;
+    display:flex;align-items:center;gap:18px;
+  }
+  .lockup>img{width:74px;height:auto;object-fit:contain;flex:0 0 auto}
+  .lockup .words{display:flex;flex-direction:column;gap:4px}
+  .lockup .wm{font-family:var(--display);font-size:22px;line-height:1.1;color:var(--bone)}
+  .lockup .sub{font-family:var(--mono);font-size:11px;letter-spacing:0.32em;color:var(--wheat)}
+
+  /* don't list */
+  ul.dont, ul.voice{
+    font-size:15px;line-height:1.8;color:var(--ink-85);
+    margin:12px 0 0;padding-left:22px;max-width:640px;
+  }
+
+  /* ---------- color ---------- */
+  .palette{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px}
+  .palette .chip{border-radius:8px;height:110px}
+  .palette .name{font-weight:700;font-size:13px}
+  .palette .hex{font-family:var(--mono);font-size:10px;color:var(--ink-60)}
+  .palette .use{font-size:11px;line-height:1.5;color:var(--ink-60)}
+  .palette figure{gap:8px}
+  .palette .meta{display:flex;flex-direction:column;gap:2px}
+
+  .pairings{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .pair{border-radius:8px;padding:20px 22px;display:flex;flex-direction:column;gap:6px}
+  .pair.dark{background:var(--night)}
+  .pair.light{background:var(--bone);border:1px solid var(--hair)}
+  .pair .lbl{font-family:var(--mono);font-size:10px;letter-spacing:0.22em}
+  .pair .lbl.wheat{color:var(--wheat)}
+  .pair .lbl.rust{color:var(--rust)}
+  .pair .txt{font-weight:600;font-size:14px}
+  .pair .txt.bone{color:var(--bone)}
+  .pair .txt.ink{color:var(--night)}
+  .pair.btncell{align-items:center;justify-content:center}
+  .rust-btn{background:var(--rust);color:var(--bone);font-weight:600;font-size:13px;padding:9px 18px;border-radius:6px}
+
+  /* ---------- type ---------- */
+  .type-list{margin-top:24px;border-top:1px solid var(--hair)}
+  .type-row{
+    display:grid;grid-template-columns:200px 1fr;gap:24px;
+    padding:24px 0;border-bottom:1px solid var(--hair);align-items:center;
+  }
+  .type-row .who{display:flex;flex-direction:column;gap:4px}
+  .type-row .who b{font-weight:700;font-size:14px}
+  .type-row .who span{font-size:12px;line-height:1.5;color:var(--ink-60)}
+  .spec-display{font-family:var(--display);font-weight:400;font-size:30px;line-height:1.2}
+  .spec-mono{font-family:var(--mono);font-size:15px;letter-spacing:0.24em;color:var(--rust)}
+  .spec-body{font-size:16px;line-height:1.7;color:var(--ink-85)}
+
+  @media (max-width:640px){
+    .grid-2,.pairings{grid-template-columns:1fr}
+    .palette{grid-template-columns:repeat(2,1fr)}
+    .type-row{grid-template-columns:1fr;gap:10px}
+    .cover{padding:40px 24px}
+    .cover-title h1{font-size:32px}
+  }
+
+  @media print{
+    body{background:#fff;padding:0}
+    .sheet{max-width:none;box-shadow:none;border-radius:0;padding:0.6in}
+    .section-head,figure,.lockup,.type-row{break-inside:avoid}
+    h2,h3{break-after:avoid}
+  }
+</style>
+</head>
+<body>
+
+<article class="sheet">
+
+  <!-- COVER BAND -->
+  <div class="cover">
+    <img src="assets/brand/ram-final-bone.svg" alt="The Kady Youth Sheep Camp ram mark">
+    <div class="cover-title">
+      <h1>Brand Guidelines</h1>
+      <div class="cover-rule"></div>
+      <div class="cover-meta">KADY YOUTH SHEEP CAMP · JULY 2026</div>
+    </div>
+  </div>
+
+  <p class="intro">This document covers the approved mark, color scheme, and type for Kady Youth Sheep Camp — the small working identity that stands beside the camp's name. The camp's hero illustration — the goat in the beam — is where this identity took its inspiration, and we love seeing it out in the world: on posters, on social media, wherever it can shine. It just isn't a logo, so it sits outside these guidelines.</p>
+
+  <!-- 01 THE MARK -->
+  <div class="section-head">
+    <div class="eyebrow">01 · THE MARK</div>
+    <h2>The Churro ram</h2>
+  </div>
+  <p class="lead">A four-horned Navajo-Churro ram, drawn by hand from the living animal. The strokes fanning around it read two ways at once: the churro's long fleece, and rays of first light around the flock. One drawing, shown here in its four house colorways — but the mark belongs to the camp, and recoloring it for a poster, a shirt run, or a season is welcome. Just keep it one solid color with strong contrast against its background.</p>
+
+  <div class="grid-2">
+    <figure>
+      <div class="swatch-tile on-night"><img src="assets/brand/ram-final-bone.svg" alt="Bone mark on night"></div>
+      <figcaption>BONE ON NIGHT — PRIMARY</figcaption>
+    </figure>
+    <figure>
+      <div class="swatch-tile on-bone"><img src="assets/brand/ram-final-night.svg" alt="Night mark on bone"></div>
+      <figcaption>NIGHT ON BONE — LIGHT BACKGROUNDS</figcaption>
+    </figure>
+    <figure>
+      <div class="swatch-tile on-white"><img src="assets/brand/ram-final-rust.svg" alt="Rust mark on white"></div>
+      <figcaption>RUST — STAMPS, LETTERHEAD</figcaption>
+    </figure>
+    <figure>
+      <div class="swatch-tile on-deep"><img src="assets/brand/ram-final-wheat.svg" alt="Wheat mark on deep night"></div>
+      <figcaption>WHEAT ON NIGHT — SHIRTS, BUTTONS</figcaption>
+    </figure>
+  </div>
+
+  <!-- CLEAR SPACE + MIN SIZE -->
+  <div class="grid-2">
+    <figure>
+      <div class="diagram">
+        <div class="clearspace"><img src="assets/brand/ram-final-night.svg" alt="Clear space diagram"></div>
+      </div>
+      <figcaption>CLEAR SPACE — KEEP HALF THE MARK'S HEIGHT OPEN ON EVERY SIDE</figcaption>
+    </figure>
+    <figure>
+      <div class="diagram minsize">
+        <div class="step">
+          <img src="assets/brand/ram-final-night.svg" alt="" style="width:80px">
+          <span class="tag">≥ 48PX</span>
+        </div>
+        <div class="step">
+          <img src="assets/brand/ram-norays-night.svg" alt="" style="width:44px">
+          <span class="tag">&lt; 48PX</span>
+        </div>
+        <div class="step">
+          <img src="assets/brand/ram-norays-night.svg" alt="" style="width:28px">
+          <span class="tag">FAVICON</span>
+        </div>
+      </div>
+      <figcaption>MINIMUM SIZE — BELOW 48PX WIDE, USE THE NO-RAYS VERSION</figcaption>
+    </figure>
+  </div>
+
+  <!-- LOCKUP -->
+  <h3 class="sub">The lockup</h3>
+  <p class="note">Beside the wordmark, the ram sits to the left at the height of both text lines together. The wordmark is always Alfa Slab One in caps; the word APPRENTICESHIP beneath it is Space Mono, wide-tracked.</p>
+  <figure style="margin-top:16px">
+    <div class="lockup">
+      <img src="assets/brand/ram-final-bone.svg" alt="Lockup">
+      <div class="words">
+        <div class="wm">KADY YOUTH SHEEP CAMP</div>
+        <div class="sub">APPRENTICESHIP</div>
+      </div>
+    </div>
+    <figcaption>THE FULL LOCKUP — SITE HEADER, DOCUMENTS, SIGNAGE</figcaption>
+  </figure>
+
+  <!-- MISUSE -->
+  <h3 class="sub">Don't</h3>
+  <ul class="dont">
+    <li>Recolor the mark in more than one color at a time — it stays a single solid ink.</li>
+    <li>Stretch, rotate, outline, or add shadows and effects.</li>
+    <li>Place a low-contrast pair — bone on white, night on rust — or set it over busy photography without a solid panel behind it.</li>
+    <li>Separate the horns, rays, or body into new artwork.</li>
+    <li>Use the mark in place of the hero illustration, or vice versa.</li>
+  </ul>
+
+  <!-- 02 COLOR -->
+  <div class="section-head">
+    <div class="eyebrow">02 · COLOR</div>
+    <h2>The palette</h2>
+  </div>
+  <p class="lead">Five colors, drawn from the camp itself: night sky over the Carrizos, undyed churro fleece, and rust from the loom's wool. Backgrounds are night or bone; rust is the single action color; wheat is for labels and accents on dark ground only.</p>
+
+  <div class="palette">
+    <figure>
+      <div class="chip" style="background:#122634"></div>
+      <div class="meta"><span class="name">Night</span><span class="hex">#122634</span><span class="use">Dark backgrounds, text on light</span></div>
+    </figure>
+    <figure>
+      <div class="chip" style="background:#0C1922"></div>
+      <div class="meta"><span class="name">Deep Night</span><span class="hex">#0C1922</span><span class="use">Darker sections, contrast bands</span></div>
+    </figure>
+    <figure>
+      <div class="chip" style="background:#EDE3CC;border:1px solid var(--hair)"></div>
+      <div class="meta"><span class="name">Bone</span><span class="hex">#EDE3CC</span><span class="use">Light backgrounds, text on dark</span></div>
+    </figure>
+    <figure>
+      <div class="chip" style="background:#DEC394"></div>
+      <div class="meta"><span class="name">Wheat</span><span class="hex">#DEC394</span><span class="use">Labels &amp; accents on dark only</span></div>
+    </figure>
+    <figure>
+      <div class="chip" style="background:#BC5A32"></div>
+      <div class="meta"><span class="name">Rust</span><span class="hex">#BC5A32</span><span class="use">Buttons, dividers, eyebrows</span></div>
+    </figure>
+  </div>
+
+  <figure style="margin-top:24px">
+    <div class="pairings">
+      <div class="pair dark">
+        <span class="lbl wheat">WHEAT LABEL</span>
+        <span class="txt bone">Bone text on Night</span>
+      </div>
+      <div class="pair light">
+        <span class="lbl rust">RUST LABEL</span>
+        <span class="txt ink">Night text on Bone</span>
+      </div>
+      <div class="pair light btncell">
+        <span class="rust-btn">Rust button</span>
+      </div>
+    </div>
+    <figcaption>APPROVED PAIRINGS — NEVER SET WHEAT OR RUST TEXT ON BONE BODY COPY SIZES</figcaption>
+  </figure>
+
+  <!-- 03 TYPE -->
+  <div class="section-head">
+    <div class="eyebrow">03 · TYPE</div>
+    <h2>Three voices</h2>
+  </div>
+  <p class="lead">Three typefaces, each with one job. Never substitute; all three are free on Google Fonts.</p>
+
+  <div class="type-list">
+    <div class="type-row">
+      <div class="who">
+        <b>Alfa Slab One</b>
+        <span>Headlines &amp; wordmark. Regular only, caps or sentence case, never below 19px.</span>
+      </div>
+      <div class="spec-display">The flock came first.</div>
+    </div>
+    <div class="type-row">
+      <div class="who">
+        <b>Space Mono</b>
+        <span>Eyebrows, labels, captions. Caps, tracked +0.16em to +0.32em, in rust or wheat.</span>
+      </div>
+      <div class="spec-mono">TEEC NOS POS, AZ · NAVAJO NATION</div>
+    </div>
+    <div class="type-row">
+      <div class="who">
+        <b>Work Sans</b>
+        <span>Body &amp; UI. 400 for body, 500–600 for nav and buttons, 700 for emphasis.</span>
+      </div>
+      <div class="spec-body">Kady Youth Sheep Camp was not founded — it is continued. The flock is Shimá's flock, kept through five generations on the same land.</div>
+    </div>
+  </div>
+
+  <!-- 04 VOICE -->
+  <div class="section-head">
+    <div class="eyebrow">04 · VOICE</div>
+    <h2>How the camp speaks</h2>
+  </div>
+  <ul class="voice">
+    <li><strong>Continued, not founded.</strong>&nbsp;The camp is an inheritance. Write plainly — short, direct sentences.</li>
+    <li><strong>Roy's phrasing stands.</strong> Kinship terms, place names, and Diné words are written exactly as the family states them, never translated flat.</li>
+    <li><strong>Let the community give the meaning.</strong> When describing the mark, speak to what is drawn — the ram, the fleece, the light. Any deeper meaning is the camp's and the community's to name, in their own words and their own time.</li>
+  </ul>
+
+  <div class="doc-footer">
+    <span>KADY YOUTH SHEEP CAMP · BRAND GUIDELINES</span>
+    <span>TEEC NOS POS, AZ · NAVAJO NATION</span>
+  </div>
+
+</article>
+
+</body>
+</html>

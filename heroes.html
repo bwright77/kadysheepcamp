@@ -30,6 +30,7 @@
     font-family:var(--body);
     color:#EDE3CC;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;               /* a 1280px comp can never scroll the page */
   }
 
   .canvas{padding:56px clamp(20px,5vw,64px) 96px; display:flex; flex-direction:column; gap:36px}
@@ -40,9 +41,11 @@
   .canvas-head .desc a{color:#DEC394; text-decoration:none}
   .canvas-head .desc a:hover{text-decoration:underline}
 
-  .options{display:flex; flex-direction:column; gap:64px; align-items:flex-start; width:100%}
+  /* min-width:0 stops these flex items from growing to the 1280px comp's
+     intrinsic width (which on iOS WebKit left the stage measuring 1280) */
+  .options{display:flex; flex-direction:column; gap:64px; align-items:stretch; width:100%; min-width:0}
 
-  .option{display:flex; flex-direction:column; gap:14px; width:100%; scroll-margin-top:24px}
+  .option{display:flex; flex-direction:column; gap:14px; width:100%; min-width:0; scroll-margin-top:24px}
   .option-label{display:flex; align-items:center; gap:12px; flex-wrap:wrap}
   .option-label .badge{
     font-family:var(--mono); font-size:12px; font-weight:700; color:#DEC394;
@@ -52,10 +55,11 @@
   .option-label .name{color:#EDE3CC; font-weight:600; font-size:15px}
   .option-label .blurb{color:rgba(237,227,204,0.5); font-size:13px}
 
-  /* responsive stage: the comp is designed at 1280px and zoomed to fit */
+  /* responsive stage: each comp is authored at 1280px and scaled to fit */
   .stage{width:100%; overflow:hidden}
   .comp{
     width:1280px;
+    transform-origin:top left;
     border:1px solid rgba(237,227,204,0.12); border-radius:10px; overflow:hidden;
     box-shadow:0 24px 60px rgba(0,0,0,0.5);
   }
@@ -388,29 +392,45 @@
 </section>
 
 <script>
-  // Each comp is authored at a fixed 1280px design width. Zoom it down to
-  // fit whatever viewport it's shown in, keeping the layout pixel-faithful.
-  // (zoom scales real layout, so the stage auto-heights and there's no
-  // compositor layer to fight — unlike transform: scale.)
+  // Each comp is authored at a fixed 1280px design width, then scaled with a
+  // CSS transform to fit whatever viewport it's shown in. transform: scale is
+  // used rather than the `zoom` property: on iOS Safari `zoom` left comps
+  // unscaled (and fought text auto-sizing), overflowing the phone. Because a
+  // transform doesn't affect layout, we set each stage's height to the scaled
+  // comp height so the page flows correctly.
   (function(){
     var DESIGN_W = 1280;
-    function fitOne(comp){
-      var w = comp.parentElement.clientWidth;
+    function fit(comp){
+      var stage = comp.parentElement;
+      // clamp to the viewport: if a stage ever mis-measures as the full 1280
+      // (seen on iOS WebKit), fall back to the real viewport width so the comp
+      // still scales down to fit rather than overflowing.
+      var w = Math.min(stage.clientWidth, document.documentElement.clientWidth);
       if (!w) return;                       // ignore 0-width (offscreen) passes
-      comp.style.zoom = Math.min(1, w / DESIGN_W);
+      var s = Math.min(1, w / DESIGN_W);
+      comp.style.transform = 'scale(' + s + ')';
+      stage.style.height = Math.ceil(comp.offsetHeight * s) + 'px';
     }
-    function fitAll(){ document.querySelectorAll('.comp').forEach(fitOne); }
-    // A ResizeObserver on each stage recomputes zoom whenever its available
-    // width changes — including the first 0 → real-width layout pass.
+    function fitAll(){ document.querySelectorAll('.comp').forEach(fit); }
     if (typeof ResizeObserver === 'function'){
       var ro = new ResizeObserver(function(entries){
         entries.forEach(function(e){
-          var comp = e.target.querySelector('.comp');
-          if (comp) fitOne(comp);
+          var t = e.target;
+          var comp = t.classList.contains('comp') ? t : t.querySelector('.comp');
+          if (comp) fit(comp);
         });
       });
+      // stages drive the available width; comps drive height (e.g. an image
+      // finishing load changes the untransformed comp height)
       document.querySelectorAll('.stage').forEach(function(s){ ro.observe(s); });
+      document.querySelectorAll('.comp').forEach(function(c){ ro.observe(c); });
     }
+    // late-loading images change comp height — refit each as it arrives
+    document.querySelectorAll('.comp img').forEach(function(img){
+      if (!img.complete) img.addEventListener('load', function(){
+        var comp = img.closest('.comp'); if (comp) fit(comp);
+      });
+    });
     window.addEventListener('resize', fitAll);
     window.addEventListener('load', fitAll);
     fitAll();

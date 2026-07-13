@@ -14,9 +14,11 @@
   .tile{position:relative; aspect-ratio:4/3; border-radius:var(--radius-card); overflow:hidden;
     border:1px solid var(--border-on-dark)}
   .tile img{width:100%; height:100%; object-fit:cover}
-  .tile figcaption{position:absolute; left:14px; bottom:12px; right:14px;
-    font-family:var(--font-mono); font-size:10px; letter-spacing:0.14em; color:var(--bone);
-    text-shadow:0 1px 6px rgba(0,0,0,0.8)}
+  /* scrim so captions stay readable over any photo (incl. light areas) */
+  .tile::after{content:""; position:absolute; left:0; right:0; bottom:0; height:55%;
+    background:linear-gradient(transparent, rgba(12,25,34,0.9)); pointer-events:none}
+  .tile figcaption{position:absolute; left:14px; bottom:12px; right:14px; z-index:1;
+    font-family:var(--font-mono); font-size:10px; letter-spacing:0.14em; color:var(--bone)}
   .tile.soon{display:flex; align-items:center; justify-content:center; background:var(--night)}
   .tile.soon span{font-family:var(--font-mono); font-size:11px; letter-spacing:0.18em; color:var(--text-muted-on-dark)}
   @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }

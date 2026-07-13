@@ -1,0 +1,178 @@
+/* Kady Youth Sheep Camp — design tokens
+   Flattened from the Claude Design handoff (tokens/{fonts,colors,typography,spacing}.css).
+   Shared by home.html and press.html. */
+
+/* webfonts (all free on Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* base palette — night sky over the Carrizos, undyed churro fleece, rust from the loom's wool */
+  --night: #122634;
+  --deep-night: #0C1922;
+  --bone: #EDE3CC;
+  --wheat: #DEC394;
+  --rust: #BC5A32;
+  --rust-hover: #D6774C;
+
+  /* surfaces */
+  --surface-dark: var(--night);
+  --surface-darker: var(--deep-night);
+  --surface-light: var(--bone);
+
+  /* text */
+  --text-on-light: var(--night);
+  --text-on-dark: var(--bone);
+  --text-body-on-light: rgba(18, 38, 52, 0.82);
+  --text-body-on-dark: rgba(237, 227, 204, 0.9);
+  --text-muted-on-light: rgba(18, 38, 52, 0.6);
+  --text-muted-on-dark: rgba(222, 195, 148, 0.65);
+
+  /* labels (Space Mono eyebrows/captions) */
+  --label-on-light: var(--rust);
+  --label-on-dark: var(--wheat);
+
+  /* action */
+  --action: var(--rust);
+  --action-hover: var(--rust-hover);
+  --action-text: var(--bone);
+
+  /* borders */
+  --border-on-light: rgba(18, 38, 52, 0.15);
+  --border-on-dark: rgba(222, 195, 148, 0.12);
+  --outline-btn-on-light: rgba(18, 38, 52, 0.35);
+  --outline-btn-on-dark: rgba(222, 195, 148, 0.6);
+
+  /* photo protection gradient (over imagery, dark base) */
+  --photo-protect: linear-gradient(180deg, rgba(12,25,34,0.10) 0%, rgba(12,25,34,0) 32%, rgba(12,25,34,0.5) 66%, rgba(12,25,34,0.95) 100%);
+
+  /* type */
+  --font-display: 'Alfa Slab One', Rockwell, Georgia, serif;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+
+  --text-hero: 56px;
+  --text-h1: 40px;
+  --text-h2: 27px;
+  --text-h3: 19px;
+
+  --text-body-lg: 19px;
+  --text-body: 15px;
+  --text-ui: 14px;
+  --text-caption: 12px;
+
+  --text-label: 12px;
+  --text-label-sm: 11px;
+  --text-label-xs: 10px;
+
+  --track-label: 0.18em;
+  --track-label-wide: 0.24em;
+  --track-label-widest: 0.32em;
+  --track-chain: 0.12em;
+
+  --leading-display: 1.12;
+  --leading-body: 1.65;
+
+  /* spacing / radius / shadow */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 44px;
+  --space-8: 56px;
+  --space-9: 64px;
+  --space-10: 80px;
+
+  --radius-btn: 6px;
+  --radius-card: 8px;
+  --radius-frame: 10px;
+
+  --shadow-frame: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================================
+   Shared component layer — used by home.html, press.html, and
+   the interior pages (our-story, gallery, events, partners,
+   merch, contact). Page-specific layout stays in each page.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+html,body{margin:0}
+body{font-family:var(--font-body); background:var(--deep-night); color:var(--bone);
+  line-height:var(--leading-body); overflow-x:hidden; -webkit-font-smoothing:antialiased}
+img{max-width:100%; display:block}
+a{color:var(--rust); text-decoration:none}
+a:hover{color:var(--rust-hover)}
+
+/* ---- nav ---- */
+.site-nav{display:flex; justify-content:space-between; align-items:center; gap:20px;
+  padding:22px var(--space-7); background:var(--bone)}
+.site-nav .brand{display:flex; align-items:center; gap:12px}
+.site-nav .brand img{width:57px; height:40px; object-fit:contain}
+.site-nav .wm{font-family:var(--font-display); font-size:15px; line-height:1.1; color:var(--night); display:block}
+.site-nav .sub{font-family:var(--font-mono); font-size:9px; letter-spacing:var(--track-label-widest); color:var(--rust)}
+.site-nav .links{display:flex; align-items:center; gap:26px}
+.site-nav .menu{display:flex; gap:24px; font-size:14px; font-weight:500}
+.site-nav .menu a{color:var(--night)}
+.site-nav .menu a:hover{color:var(--rust)}
+.site-nav .menu a.current{color:var(--rust); border-bottom:2px solid var(--rust); padding-bottom:2px}
+
+/* ---- buttons ---- */
+.btn{font-weight:600; border-radius:var(--radius-btn); white-space:nowrap; display:inline-block}
+.btn-solid{background:var(--action); color:var(--action-text); font-size:14px; padding:10px 20px}
+.btn-solid:hover{background:var(--action-hover); color:var(--action-text)}
+.btn-lg{font-size:16px; padding:14px 28px}
+.btn-ghost-dark{border:1px solid var(--outline-btn-on-dark); color:var(--wheat)}
+.btn-ghost-dark:hover{border-color:var(--wheat); color:var(--bone)}
+.btn-ghost-light{border:1px solid var(--outline-btn-on-light); color:var(--night); font-size:15px; padding:12px 24px}
+.btn-ghost-light:hover{border-color:var(--night); color:var(--night)}
+
+/* ---- page header ---- */
+.page-head{background:var(--night); padding:64px var(--space-9) 52px; display:flex; flex-direction:column; gap:14px}
+.page-head .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
+.page-head h1{font-family:var(--font-display); font-weight:400; font-size:var(--text-h1); line-height:1.15; color:var(--bone); margin:0}
+.page-head .lead{font-size:var(--text-body-lg); line-height:var(--leading-body); color:var(--text-body-on-dark); max-width:680px; margin:8px 0 0}
+.page-head .pending{align-self:flex-start; font-family:var(--font-mono); font-size:9px; letter-spacing:0.14em;
+  color:var(--wheat); border:1px solid var(--outline-btn-on-dark); border-radius:3px; padding:4px 9px; margin-top:4px}
+
+/* ---- generic content band ---- */
+.band{padding:52px var(--space-9)}
+.band-dark{background:var(--deep-night)}
+.band-night{background:var(--night)}
+.band-bone{background:var(--bone); color:var(--night)}
+.band .b-eyebrow{font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-label-wide); color:var(--label-on-dark)}
+.band-bone .b-eyebrow{color:var(--label-on-light)}
+.band h2{font-family:var(--font-display); font-weight:400; font-size:var(--text-h2); line-height:1.2; margin:12px 0 0}
+.band > p{font-size:16px; line-height:var(--leading-body); max-width:720px; margin:14px 0 0}
+.band-dark > p,.band-night > p{color:var(--text-body-on-dark)}
+.band-bone > p{color:var(--text-body-on-light)}
+
+/* ---- recognition strip ---- */
+.recognition{background:var(--deep-night); padding:20px var(--space-9);
+  display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-top:1px solid var(--border-on-dark)}
+.recognition .label{font-family:var(--font-mono); font-size:10px; letter-spacing:var(--track-label-wide); color:var(--rust)}
+.recognition .credits{font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; color:var(--text-muted-on-dark); line-height:2}
+
+/* ---- site footer ---- */
+.site-footer{background:var(--night); padding:40px var(--space-9); display:flex; justify-content:space-between;
+  align-items:center; gap:24px; flex-wrap:wrap; border-top:1px solid var(--border-on-dark)}
+.site-footer .wm{font-family:var(--font-display); font-size:16px; color:var(--bone)}
+.site-footer .sub{font-family:var(--font-mono); font-size:10px; letter-spacing:0.16em; color:var(--text-muted-on-dark); margin-top:4px}
+.site-footer .foot-links{display:flex; gap:20px; flex-wrap:wrap; font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em}
+.site-footer .foot-links a{color:var(--wheat)}
+.site-footer .foot-links a:hover{color:var(--rust)}
+.site-footer .foot-meta{font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
+
+/* ---- shared responsive ---- */
+@media (max-width:900px){ .site-nav .menu{gap:18px; font-size:13px} }
+@media (max-width:720px){
+  .site-nav{flex-direction:column; align-items:flex-start; gap:14px; padding:18px 22px}
+  .site-nav .links{flex-direction:column; align-items:flex-start; gap:14px; width:100%}
+  .site-nav .menu{flex-wrap:wrap; gap:14px 18px}
+  .page-head{padding:44px 24px}
+  .band{padding:40px 24px}
+  .recognition,.site-footer{padding-left:24px; padding-right:24px}
+  .site-footer{flex-direction:column; align-items:flex-start}
+}

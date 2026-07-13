@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Kady Youth Sheep Camp</title>
+<meta name="description" content="Reach the Kady Youth Sheep Camp — Teec Nos Pos, Navajo Nation. Follow on Facebook or support the youth apprenticeship.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .contact{background:var(--deep-night); padding:44px var(--space-9) 56px;
+    display:grid; grid-template-columns:1fr 1.1fr; gap:48px; align-items:start}
+  .cinfo .row{padding:18px 0; border-top:1px solid var(--border-on-dark)}
+  .cinfo .k{font-family:var(--font-mono); font-size:10px; letter-spacing:0.16em; color:var(--wheat)}
+  .cinfo .v{font-size:16px; color:var(--bone); margin-top:6px}
+  .cinfo .v a{color:var(--rust)}
+  .form{background:var(--night); border:1px solid var(--border-on-dark); border-radius:var(--radius-frame); padding:28px}
+  .form .note{font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; color:var(--wheat);
+    border:1px solid var(--outline-btn-on-dark); border-radius:4px; padding:8px 12px; margin-bottom:20px}
+  .field{display:flex; flex-direction:column; gap:6px; margin-bottom:16px}
+  .field label{font-family:var(--font-mono); font-size:10px; letter-spacing:0.14em; color:var(--text-muted-on-dark)}
+  .field input,.field textarea{background:var(--deep-night); border:1px solid var(--outline-btn-on-dark);
+    border-radius:var(--radius-btn); color:var(--bone); font-family:var(--font-body); font-size:15px; padding:11px 13px}
+  .field textarea{min-height:110px; resize:vertical}
+  .form button{background:var(--action); color:var(--action-text); font-weight:600; font-size:15px;
+    border:0; border-radius:var(--radius-btn); padding:13px 24px; cursor:not-allowed; opacity:0.75}
+  @media (max-width:820px){ .contact{grid-template-columns:1fr; gap:28px} }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="brand" href="home.html">
+    <img src="assets/brand/ram-final-night.svg" alt="Churro ram glyph">
+    <span><span class="wm">KADY YOUTH SHEEP CAMP</span><span class="sub">APPRENTICESHIP</span></span>
+  </a>
+  <div class="links">
+    <div class="menu">
+      <a href="our-story.html">Our Story</a><a href="gallery.html">Gallery</a><a href="events.html">Events</a><a href="partners.html">Partners</a><a href="merch.html">Merch</a><a class="current" href="contact.html">Contact</a><a href="press.html">Press</a>
+    </div>
+    <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Support the Camp</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="eyebrow">CONTACT</div>
+  <h1>Reach the camp</h1>
+  <p class="lead">The surest way to reach us right now is Facebook. A contact form is on the way — it isn't connected yet.</p>
+  <span class="pending">DRAFT · FORM NOT YET CONNECTED</span>
+</header>
+
+<section class="contact">
+  <div class="cinfo">
+    <div class="row"><div class="k">LOCATION</div><div class="v">Teec Nos Pos, AZ · Navajo Nation</div></div>
+    <div class="row"><div class="k">FOLLOW</div><div class="v"><a href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">facebook.com/kadyyouthsheepcamp</a></div></div>
+    <div class="row"><div class="k">SUPPORT</div><div class="v"><a href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Give to the apprenticeship fund</a></div></div>
+    <div class="row"><div class="k">EMAIL</div><div class="v">Coming soon</div></div>
+  </div>
+
+  <form class="form" onsubmit="return false;" aria-label="Contact form (placeholder)">
+    <div class="note">PLACEHOLDER — this form isn't wired up yet. Please reach us on Facebook for now.</div>
+    <div class="field"><label for="cf-name">NAME</label><input id="cf-name" type="text" placeholder="Your name" disabled></div>
+    <div class="field"><label for="cf-email">EMAIL</label><input id="cf-email" type="email" placeholder="you@example.com" disabled></div>
+    <div class="field"><label for="cf-msg">MESSAGE</label><textarea id="cf-msg" placeholder="A short note…" disabled></textarea></div>
+    <button type="submit" disabled>Send (coming soon)</button>
+  </form>
+</section>
+
+<footer class="site-footer">
+  <div>
+    <div class="wm">KADY YOUTH SHEEP CAMP</div>
+    <div class="sub">TEEC NOS POS, AZ · NAVAJO NATION</div>
+  </div>
+  <nav class="foot-links">
+    <a href="our-story.html">Our Story</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="events.html">Events</a>
+    <a href="partners.html">Partners</a>
+    <a href="merch.html">Merch</a>
+    <a href="press.html">Press</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">Facebook</a>
+  </nav>
+  <div class="foot-meta">© 2026 Kady Youth Sheep Camp</div>
+</footer>
+
+</body>
+</html>

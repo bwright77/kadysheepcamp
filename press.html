@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Press — Kady Youth Sheep Camp</title>
+<meta name="description" content="In the news — articles and stories about Roy Kady and the Kady Youth Sheep Camp, from KNAU and NPR to Arizona Highways and Jamie Oliver's Jamie's America.">
+<!-- Site not launched yet — kept behind the coming-soon page -->
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  html,body{margin:0}
+  body{font-family:var(--font-body); background:var(--deep-night); color:var(--bone); overflow-x:hidden}
+  a{color:var(--rust); text-decoration:none}
+  a:hover{color:var(--rust-hover)}
+  img{max-width:100%; display:block}
+
+  /* ---------- nav (shared with home) ---------- */
+  .site-nav{display:flex; justify-content:space-between; align-items:center; gap:20px;
+    padding:22px var(--space-7); background:var(--bone)}
+  .site-nav .brand{display:flex; align-items:center; gap:12px}
+  .site-nav .brand img{width:57px; height:40px; object-fit:contain}
+  .site-nav .wm{font-family:var(--font-display); font-size:15px; line-height:1.1; color:var(--night)}
+  .site-nav .sub{font-family:var(--font-mono); font-size:9px; letter-spacing:var(--track-label-widest); color:var(--rust)}
+  .site-nav .links{display:flex; align-items:center; gap:26px}
+  .site-nav .menu{display:flex; gap:24px; font-size:14px; font-weight:500; color:var(--night)}
+  .site-nav .menu a{color:var(--night)}
+  .site-nav .menu a:hover{color:var(--rust)}
+  .site-nav .menu a.current{color:var(--rust); border-bottom:2px solid var(--rust); padding-bottom:2px}
+  .btn{font-weight:600; border-radius:var(--radius-btn); white-space:nowrap; display:inline-block}
+  .btn-solid{background:var(--action); color:var(--action-text); font-size:14px; padding:10px 20px}
+  .btn-solid:hover{background:var(--action-hover); color:var(--action-text)}
+
+  /* ---------- page header ---------- */
+  .page-head{background:var(--night); padding:64px var(--space-9) 52px; display:flex; flex-direction:column; gap:14px}
+  .page-head .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
+  .page-head h1{font-family:var(--font-display); font-weight:400; font-size:var(--text-h1); line-height:1.15; color:var(--bone); margin:0}
+  .page-head p{font-size:var(--text-body-lg); line-height:var(--leading-body); color:var(--text-body-on-dark); max-width:680px; margin:8px 0 0}
+
+  /* ---------- press groups ---------- */
+  .groups{background:var(--deep-night); padding:12px var(--space-9) 40px}
+  .group{padding:36px 0 4px}
+  .group > .g-label{font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-label-wide); color:var(--rust); margin-bottom:6px}
+  .group > .g-note{font-size:13px; color:var(--text-muted-on-dark); margin:0 0 12px}
+
+  .entry{display:grid; grid-template-columns:230px 1fr; gap:24px; align-items:baseline;
+    padding:22px 0; border-top:1px solid var(--border-on-dark)}
+  .entry .meta{display:flex; flex-direction:column; gap:4px}
+  .entry .out{font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; color:var(--wheat)}
+  .entry .date{font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
+  .entry .type{font-family:var(--font-mono); font-size:9px; letter-spacing:0.14em; color:var(--text-muted-on-dark)}
+  .entry a.title{font-family:var(--font-display); font-weight:400; font-size:21px; line-height:1.25; color:var(--bone)}
+  .entry a.title:hover{color:var(--wheat)}
+  .entry .desc{font-size:15px; line-height:1.6; color:var(--text-body-on-dark); margin:8px 0 0; max-width:640px}
+
+  /* ---------- recognition ---------- */
+  .recognition{background:var(--night); padding:24px var(--space-9);
+    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-top:1px solid var(--border-on-dark)}
+  .recognition .label{font-family:var(--font-mono); font-size:10px; letter-spacing:var(--track-label-wide); color:var(--rust)}
+  .recognition .credits{font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; color:var(--text-muted-on-dark); line-height:2}
+
+  @media (max-width:900px){ .site-nav .menu{gap:18px; font-size:13px} }
+  @media (max-width:720px){
+    .site-nav{flex-direction:column; align-items:flex-start; gap:14px; padding:18px 22px}
+    .site-nav .links{flex-direction:column; align-items:flex-start; gap:14px; width:100%}
+    .site-nav .menu{flex-wrap:wrap; gap:14px 18px}
+    .page-head,.groups,.recognition{padding-left:24px; padding-right:24px}
+    .page-head{padding-top:44px}
+    .entry{grid-template-columns:1fr; gap:8px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="brand" href="home.html">
+    <img src="assets/brand/ram-final-night.svg" alt="Churro ram glyph">
+    <span>
+      <span class="wm" style="display:block">KADY YOUTH SHEEP CAMP</span>
+      <span class="sub">APPRENTICESHIP</span>
+    </span>
+  </a>
+  <div class="links">
+    <div class="menu">
+      <a href="our-story.html">Our Story</a><a href="gallery.html">Gallery</a><a href="events.html">Events</a><a href="partners.html">Partners</a><a href="merch.html">Merch</a><a href="contact.html">Contact</a><a class="current" href="press.html">Press</a>
+    </div>
+    <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Support the Camp</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-head">
+  <div class="eyebrow">PRESS · IN THE NEWS</div>
+  <h1>Roy Kady &amp; the camp in the news</h1>
+  <p>Master Diné weaver Roy Kady and the Kady Youth Sheep Camp have been featured in national and regional press over more than fifteen years — from public radio to Arizona Highways to Jamie Oliver's kitchen.</p>
+</header>
+
+<!-- GROUPS -->
+<main class="groups">
+
+  <section class="group">
+    <div class="g-label">NEWS &amp; FEATURES</div>
+    <article class="entry">
+      <div class="meta"><span class="out">KNAU · Arizona Public Radio</span><span class="date">July 2026</span></div>
+      <div>
+        <a class="title" href="https://www.knau.org/knau-and-arizona-news/2026-07-10/navajo-weavers-keep-traditional-sheep-journey-alive-despite-drought-and-modern-pressures" target="_blank" rel="noopener">Navajo weavers keep traditional sheep journey alive despite drought and modern pressures</a>
+        <p class="desc">Roy Kady leads apprentices on the annual sheep trailing to the mountain camp, keeping the practice alive against drought and modern pressures.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="meta"><span class="out">Hyperallergic</span><span class="date">June 2024</span></div>
+      <div>
+        <a class="title" href="https://hyperallergic.com/weaver-roy-kady-is-a-shepherd-first/" target="_blank" rel="noopener">Weaver Roy Kady Is a Shepherd First</a>
+        <p class="desc">A profile on how shepherding and weaving are one interconnected practice — and how Roy passes both to the next generation.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="meta"><span class="out">KSUT Public Radio</span><span class="date">June 2024</span></div>
+      <div>
+        <a class="title" href="https://www.ksut.org/culture/2024-06-03/navajo-weavers-and-herders-come-together-to-celebrate-churro-sheep-a-breed-once-believed-to-be-extinct" target="_blank" rel="noopener">Navajo weavers and herders come together to celebrate Churro sheep, a breed once believed to be extinct</a>
+        <p class="desc">Weavers, herders, and apprentices gather around the Navajo-Churro — the breed at the heart of the camp's work.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="meta"><span class="out">NPR</span><span class="date">June 2010</span></div>
+      <div>
+        <a class="title" href="https://www.npr.org/2010/06/13/127797442/sacred-sheep-revive-navajo-tradition-for-now" target="_blank" rel="noopener">Sacred Sheep Revive Navajo Tradition, For Now</a>
+        <p class="desc">A national look at the revival of the Navajo-Churro at Teec Nos Pos, with Roy Kady among its stewards.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="group">
+    <div class="g-label">ARIZONA HIGHWAYS — THE KADY FAMILY SERIES</div>
+    <p class="g-note">Three features by Sunnie R. Clahchischiligi, Roy's niece, 2021–2023.</p>
+    <article class="entry">
+      <div class="meta"><span class="out">Arizona Highways</span><span class="date">November 2021</span></div>
+      <div>
+        <a class="title" href="https://www.arizonahighways.com/article/great-horseman-they-called-kady" target="_blank" rel="noopener">The Great Horseman They Called Kady</a>
+        <p class="desc">The family namesake — a legendary Diné horseman descended from Long Walk survivors.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="meta"><span class="out">Arizona Highways</span><span class="date">April 2022</span></div>
+      <div>
+        <a class="title" href="https://www.arizonahighways.com/article/shimas-legacy" target="_blank" rel="noopener">Shimá's Legacy</a>
+        <p class="desc">Mary Kady Clah and the weaving tradition she passed down through generations — including her son Roy.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="meta"><span class="out">Arizona Highways</span><span class="date">March 2023</span></div>
+      <div>
+        <a class="title" href="https://www.arizonahighways.com/article/according-custom" target="_blank" rel="noopener">According to Custom</a>
+        <p class="desc">Roy revives a 50-year-old tradition of trailing the flock across the mountains, reconnecting culture, land, and care.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="group">
+    <div class="g-label">TELEVISION &amp; COOKBOOK</div>
+    <article class="entry">
+      <div class="meta"><span class="out">Jamie Oliver</span><span class="date">2009</span><span class="type">TELEVISION</span></div>
+      <div>
+        <a class="title" href="https://www.imdb.com/title/tt1525040/" target="_blank" rel="noopener">Jamie's American Road Trip — the Navajo Nation episode</a>
+        <p class="desc">Jamie Oliver visits Teec Nos Pos, where Roy Kady hosts him for a churro-lamb feast and a night in the hogan.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="meta"><span class="out">Jamie Oliver</span><span class="date">2009</span><span class="type">COOKBOOK</span></div>
+      <div>
+        <a class="title" href="https://www.jamieoliver.com/recipes/category/books/jamies-america/" target="_blank" rel="noopener">Jamie's America</a>
+        <p class="desc">Roy's churro lamb anchors the Arizona chapter of Oliver's American cookbook.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="group">
+    <div class="g-label">MORE</div>
+    <article class="entry">
+      <div class="meta"><span class="out">First American Art Magazine</span><span class="date">Heard Museum Guide</span></div>
+      <div>
+        <a class="title" href="https://issuu.com/firstamericanartmagazine/docs/heard_guide17_online/s/25770563" target="_blank" rel="noopener">Keeping the Promise: Master Diné Weaver Roy Kady &amp; His Apprentice Program</a>
+        <p class="desc">A print feature on Roy's practice and the apprenticeship that carries it forward.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="meta"><span class="out">Slow Food Foundation</span><span class="date">Presidium</span></div>
+      <div>
+        <a class="title" href="https://www.fondazioneslowfood.com/en/slow-food-presidia/navajo-churro-sheep/" target="_blank" rel="noopener">Navajo-Churro Sheep Presidium</a>
+        <p class="desc">The Slow Food Presidium recognizing the Navajo-Churro — the breed the camp stewards.</p>
+      </div>
+    </article>
+  </section>
+
+</main>
+
+<!-- RECOGNITION -->
+<div class="recognition">
+  <span class="label">RECOGNITION</span>
+  <span class="credits">ARIZONA HIGHWAYS · THREE FEATURES 2021–2023&nbsp;&nbsp;·&nbsp;&nbsp;JAMIE'S AMERICAN ROAD TRIP, 2009&nbsp;&nbsp;·&nbsp;&nbsp;"JAMIE'S AMERICA" COOKBOOK&nbsp;&nbsp;·&nbsp;&nbsp;NATIVE AMERICAN RIGHTS FUND&nbsp;&nbsp;·&nbsp;&nbsp;SLOW FOOD PRESIDIUM</span>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div>
+    <div class="wm">KADY YOUTH SHEEP CAMP</div>
+    <div class="sub">TEEC NOS POS, AZ · NAVAJO NATION</div>
+  </div>
+  <nav class="foot-links">
+    <a href="our-story.html">Our Story</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="events.html">Events</a>
+    <a href="partners.html">Partners</a>
+    <a href="merch.html">Merch</a>
+    <a href="press.html">Press</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">Facebook</a>
+  </nav>
+  <div class="foot-meta">© 2026 Kady Youth Sheep Camp</div>
+</footer>
+
+</body>
+</html>

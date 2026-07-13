@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kady Youth Sheep Camp</title>
+<meta name="description" content="Kady Youth Sheep Camp Apprenticeship — keeping Diné lifeways alive through the raising of sheep, the land, and the loom. Teec Nos Pos, Navajo Nation.">
+<!-- Site not launched yet — kept behind the coming-soon page -->
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  html,body{margin:0}
+  body{font-family:var(--font-body); background:var(--deep-night); color:var(--bone); overflow-x:hidden;}
+  a{color:var(--rust); text-decoration:none}
+  a:hover{color:var(--rust-hover)}
+  img{max-width:100%; display:block}
+
+  /* ---------- nav ---------- */
+  .site-nav{display:flex; justify-content:space-between; align-items:center; gap:20px;
+    padding:22px var(--space-7); background:var(--bone);}
+  .site-nav .brand{display:flex; align-items:center; gap:12px}
+  .site-nav .brand img{width:57px; height:40px; object-fit:contain}
+  .site-nav .wm{font-family:var(--font-display); font-size:15px; line-height:1.1; color:var(--night)}
+  .site-nav .sub{font-family:var(--font-mono); font-size:9px; letter-spacing:var(--track-label-widest); color:var(--rust)}
+  .site-nav .links{display:flex; align-items:center; gap:26px}
+  .site-nav .menu{display:flex; gap:24px; font-size:14px; font-weight:500; color:var(--night)}
+  .site-nav .menu a{color:var(--night)}
+  .site-nav .menu a:hover{color:var(--rust)}
+  .btn{font-weight:600; border-radius:var(--radius-btn); white-space:nowrap; display:inline-block}
+  .btn-solid{background:var(--action); color:var(--action-text); font-size:14px; padding:10px 20px}
+  .btn-solid:hover{background:var(--action-hover); color:var(--action-text)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative; height:1000px; overflow:hidden}
+  .hero .photo{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 2%}
+  .hero .protect{position:absolute; inset:0; background:var(--photo-protect)}
+  .hero .heavens{position:absolute; top:0; left:0; width:100%; height:auto}
+  .hero .stack{position:absolute; left:0; right:0; bottom:40px;
+    display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 80px}
+  .hero .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label); color:var(--wheat)}
+  .hero h1{font-family:var(--font-display); font-weight:400; font-size:var(--text-hero);
+    line-height:var(--leading-display); color:var(--bone); max-width:880px; margin:16px 0 0}
+  .hero .lede{font-size:var(--text-body-lg); line-height:var(--leading-body); color:var(--text-body-on-dark); max-width:820px; margin:18px 0 0}
+  .hero .seal{margin-top:24px}
+  .hero .seal img{width:120px; height:auto}
+  .hero .actions{display:flex; justify-content:center; gap:16px; margin-top:26px}
+  .btn-lg{font-size:16px; padding:14px 28px}
+  .btn-ghost-dark{border:1px solid var(--outline-btn-on-dark); color:var(--wheat)}
+  .btn-ghost-dark:hover{border-color:var(--wheat); color:var(--bone)}
+
+  /* ---------- creation chain ---------- */
+  .chain{background:var(--deep-night); display:flex; justify-content:center; align-items:center; gap:14px;
+    flex-wrap:wrap; padding:16px var(--space-7); border-top:1px solid var(--border-on-dark);
+    font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-chain)}
+  .chain b{color:var(--bone); font-weight:700}
+  .chain b span{color:var(--text-muted-on-dark); font-weight:400}
+  .chain .arw{color:var(--rust)}
+
+  /* ---------- mission ---------- */
+  .mission{background:var(--night); padding:52px var(--space-9); display:flex; flex-direction:column; gap:14px}
+  .mission .kicker{font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
+  .mission p{font-size:20px; line-height:var(--leading-body); color:var(--text-body-on-dark); max-width:820px; margin:0}
+  .mission .attr{font-size:14px; font-weight:600; color:var(--wheat)}
+
+  /* ---------- from the trail ---------- */
+  .trail{background:var(--bone); padding:44px var(--space-9);
+    display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap}
+  .trail .label{font-family:var(--font-mono); font-size:11px; letter-spacing:0.2em; color:var(--rust)}
+  .trail h2{font-family:var(--font-display); font-weight:400; font-size:28px; line-height:1.25; color:var(--night); max-width:720px; margin:10px 0 0}
+  .btn-ghost-light{border:1px solid var(--outline-btn-on-light); color:var(--night); font-size:15px; padding:12px 24px}
+  .btn-ghost-light:hover{border-color:var(--night); color:var(--night)}
+
+  /* ---------- press teaser ---------- */
+  .press{background:var(--deep-night); padding:44px var(--space-9); border-top:1px solid var(--border-on-dark);
+    display:flex; flex-direction:column; gap:20px}
+  .press .head{display:flex; justify-content:space-between; align-items:baseline; gap:20px; flex-wrap:wrap}
+  .press .label{font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
+  .press .all{font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; color:var(--rust)}
+  .press .all:hover{color:var(--rust-hover)}
+  .press .items{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  .press .item{display:flex; flex-direction:column; gap:6px; padding-top:16px; border-top:1px solid var(--border-on-dark)}
+  .press .item .out{font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
+  .press .item a.title{font-size:16px; line-height:1.35; color:var(--bone); font-weight:600}
+  .press .item a.title:hover{color:var(--wheat)}
+
+  /* ---------- recognition ---------- */
+  .recognition{background:var(--deep-night); padding:20px var(--space-9);
+    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-top:1px solid var(--border-on-dark)}
+  .recognition .label{font-family:var(--font-mono); font-size:10px; letter-spacing:var(--track-label-wide); color:var(--rust)}
+  .recognition .credits{font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; color:var(--text-muted-on-dark); line-height:2}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .site-nav .menu{gap:18px; font-size:13px}
+    .press .items{grid-template-columns:1fr}
+  }
+  @media (max-width:720px){
+    .site-nav{flex-direction:column; align-items:flex-start; gap:14px; padding:18px 22px}
+    .site-nav .links{flex-direction:column; align-items:flex-start; gap:14px; width:100%}
+    .site-nav .menu{flex-wrap:wrap; gap:14px 18px}
+    .hero{height:auto; min-height:88svh}
+    .hero .stack{position:static; padding:220px 22px 48px}
+    .hero h1{font-size:38px}
+    .hero .lede{font-size:16px}
+    .mission,.trail,.press,.recognition{padding-left:24px; padding-right:24px}
+    .trail h2{font-size:23px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none !important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="brand">
+    <img src="assets/brand/ram-final-night.svg" alt="Churro ram glyph">
+    <div>
+      <div class="wm">KADY YOUTH SHEEP CAMP</div>
+      <div class="sub">APPRENTICESHIP</div>
+    </div>
+  </div>
+  <div class="links">
+    <div class="menu">
+      <a href="our-story.html">Our Story</a><a href="gallery.html">Gallery</a><a href="events.html">Events</a><a href="partners.html">Partners</a><a href="merch.html">Merch</a><a href="contact.html">Contact</a><a href="press.html">Press</a>
+    </div>
+    <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Support the Camp</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <img class="photo" src="assets/photos/camp-sheep.jpg" alt="Carrying a churro lamb at the camp">
+  <div class="protect"></div>
+  <img class="heavens" src="assets/brand/cloud-steps.svg" alt="">
+  <div class="stack">
+    <div class="eyebrow">AS THE ELDERS TELL IT — THE FIRST SHEEP</div>
+    <h1>Shaped from clouds, given breath</h1>
+    <p class="lede">In Diné tradition the Holy People made the first sheep — a body molded from clouds, bones of straight willow, horns and hooves shaped from a rainbow, a face of dawn, eyes of rock crystal — then breathed life into them. The camp raises its flock inside that story.</p>
+    <div class="seal"><img src="assets/brand/cloud-mark.svg" alt=""></div>
+    <div class="actions">
+      <a class="btn btn-solid btn-lg" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Support the Camp</a>
+      <a class="btn btn-ghost-dark btn-lg" href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">Follow the Camp</a>
+    </div>
+  </div>
+</header>
+
+<!-- CREATION CHAIN -->
+<div class="chain">
+  <b>BODY <span>· CLOUD</span></b><span class="arw">→</span>
+  <b>BONE <span>· WILLOW</span></b><span class="arw">→</span>
+  <b>HORNS <span>· RAINBOW</span></b><span class="arw">→</span>
+  <b>FACE <span>· DAWN</span></b><span class="arw">→</span>
+  <b>EYES <span>· CRYSTAL</span></b><span class="arw">→</span>
+  <b>BREATH <span>· LIFE</span></b>
+</div>
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="kicker">OUR MISSION</div>
+  <p>The Kady Youth Sheep Camp Apprenticeship carries the heartbeat of our ancestors — a path of returning to the lifeways of sheep, our gentle teachers of patience, balance, and care.</p>
+  <div class="attr">— Roy Kady, Kady Youth Sheep Camp</div>
+</section>
+
+<!-- FROM THE TRAIL -->
+<section class="trail">
+  <div>
+    <span class="label">FROM THE TRAIL · 2022</span>
+    <h2>After 50 years, the sheep walked the mountain trail again.</h2>
+  </div>
+  <a class="btn btn-ghost-light" href="our-story.html">Read our story</a>
+</section>
+
+<!-- IN THE NEWS (press teaser) -->
+<section class="press">
+  <div class="head">
+    <div class="label">IN THE NEWS</div>
+    <a class="all" href="press.html">Read all coverage →</a>
+  </div>
+  <div class="items">
+    <div class="item">
+      <span class="out">KNAU · ARIZONA PUBLIC RADIO · 2026</span>
+      <a class="title" href="https://www.knau.org/knau-and-arizona-news/2026-07-10/navajo-weavers-keep-traditional-sheep-journey-alive-despite-drought-and-modern-pressures" target="_blank" rel="noopener">Navajo weavers keep the traditional sheep journey alive</a>
+    </div>
+    <div class="item">
+      <span class="out">HYPERALLERGIC · 2024</span>
+      <a class="title" href="https://hyperallergic.com/weaver-roy-kady-is-a-shepherd-first/" target="_blank" rel="noopener">Weaver Roy Kady Is a Shepherd First</a>
+    </div>
+    <div class="item">
+      <span class="out">ARIZONA HIGHWAYS · 2023</span>
+      <a class="title" href="https://www.arizonahighways.com/article/according-custom" target="_blank" rel="noopener">According to Custom</a>
+    </div>
+  </div>
+</section>
+
+<!-- RECOGNITION -->
+<div class="recognition">
+  <span class="label">RECOGNITION</span>
+  <span class="credits">ARIZONA HIGHWAYS · THREE FEATURES 2021–2023&nbsp;&nbsp;·&nbsp;&nbsp;JAMIE'S AMERICAN ROAD TRIP, 2009&nbsp;&nbsp;·&nbsp;&nbsp;"JAMIE'S AMERICA" COOKBOOK&nbsp;&nbsp;·&nbsp;&nbsp;NATIVE AMERICAN RIGHTS FUND&nbsp;&nbsp;·&nbsp;&nbsp;SLOW FOOD PRESIDIUM</span>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div>
+    <div class="wm">KADY YOUTH SHEEP CAMP</div>
+    <div class="sub">TEEC NOS POS, AZ · NAVAJO NATION</div>
+  </div>
+  <nav class="foot-links">
+    <a href="our-story.html">Our Story</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="events.html">Events</a>
+    <a href="partners.html">Partners</a>
+    <a href="merch.html">Merch</a>
+    <a href="press.html">Press</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">Facebook</a>
+  </nav>
+  <div class="foot-meta">© 2026 Kady Youth Sheep Camp</div>
+</footer>
+
+</body>
+</html>

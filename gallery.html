@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — Kady Youth Sheep Camp</title>
+<meta name="description" content="Photographs from the Kady Youth Sheep Camp — the flock, the loom, the land at Teec Nos Pos, Navajo Nation.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .gallery{background:var(--deep-night); padding:40px var(--space-9) 56px}
+  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  .tile{position:relative; aspect-ratio:4/3; border-radius:var(--radius-card); overflow:hidden;
+    border:1px solid var(--border-on-dark)}
+  .tile img{width:100%; height:100%; object-fit:cover}
+  .tile figcaption{position:absolute; left:14px; bottom:12px; right:14px;
+    font-family:var(--font-mono); font-size:10px; letter-spacing:0.14em; color:var(--bone);
+    text-shadow:0 1px 6px rgba(0,0,0,0.8)}
+  .tile.soon{display:flex; align-items:center; justify-content:center; background:var(--night)}
+  .tile.soon span{font-family:var(--font-mono); font-size:11px; letter-spacing:0.18em; color:var(--text-muted-on-dark)}
+  @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:520px){ .grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="brand" href="home.html">
+    <img src="assets/brand/ram-final-night.svg" alt="Churro ram glyph">
+    <span><span class="wm">KADY YOUTH SHEEP CAMP</span><span class="sub">APPRENTICESHIP</span></span>
+  </a>
+  <div class="links">
+    <div class="menu">
+      <a href="our-story.html">Our Story</a><a class="current" href="gallery.html">Gallery</a><a href="events.html">Events</a><a href="partners.html">Partners</a><a href="merch.html">Merch</a><a href="contact.html">Contact</a><a href="press.html">Press</a>
+    </div>
+    <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Support the Camp</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="eyebrow">GALLERY</div>
+  <h1>From the camp</h1>
+  <p class="lead">The flock, the loom, and the land. A fuller, captioned gallery is on the way — a first selection is below.</p>
+  <span class="pending">DRAFT · PLACEHOLDER SELECTION</span>
+</header>
+
+<section class="gallery">
+  <div class="grid">
+    <figure class="tile"><img src="assets/photos/camp-sheep.jpg" alt="Carrying a churro lamb at the camp"><figcaption>AT CAMP · CARRYING A CHURRO LAMB</figcaption></figure>
+    <figure class="tile"><img src="assets/photos/loom-teaching.jpg" alt="Apprentices at the upright loom"><figcaption>THE UPRIGHT LOOM · TEEC NOS POS</figcaption></figure>
+    <figure class="tile"><img src="assets/photos/shearing.jpg" alt="Hand-shearing a churro fleece"><figcaption>SHEARING DAY</figcaption></figure>
+    <figure class="tile"><img src="assets/photos/loom-detail.jpg" alt="In-progress weaving of handspun churro wool"><figcaption>HANDSPUN CHURRO · NATURAL DYE</figcaption></figure>
+    <figure class="tile"><img src="assets/photos/herb-gathering.jpg" alt="Gathering herbs below the mesa"><figcaption>GATHERING BELOW THE MESA</figcaption></figure>
+    <figure class="tile soon"><span>MORE PHOTOS COMING</span></figure>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div>
+    <div class="wm">KADY YOUTH SHEEP CAMP</div>
+    <div class="sub">TEEC NOS POS, AZ · NAVAJO NATION</div>
+  </div>
+  <nav class="foot-links">
+    <a href="our-story.html">Our Story</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="events.html">Events</a>
+    <a href="partners.html">Partners</a>
+    <a href="merch.html">Merch</a>
+    <a href="press.html">Press</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">Facebook</a>
+  </nav>
+  <div class="foot-meta">© 2026 Kady Youth Sheep Camp</div>
+</footer>
+
+</body>
+</html>

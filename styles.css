@@ -34,7 +34,7 @@
   /* action */
   --action: var(--rust);
   --action-hover: var(--rust-hover);
-  --action-text: var(--bone);
+  --action-text: #ffffff;        /* white on rust = 4.52:1, clears WCAG AA (bone was 3.5:1) */
 
   /* borders */
   --border-on-light: rgba(18, 38, 52, 0.15);
@@ -152,7 +152,7 @@ a:hover{color:var(--rust-hover)}
 /* ---- recognition strip ---- */
 .recognition{background:var(--deep-night); padding:20px var(--space-9);
   display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-top:1px solid var(--border-on-dark)}
-.recognition .label{font-family:var(--font-mono); font-size:10px; letter-spacing:var(--track-label-wide); color:var(--rust)}
+.recognition .label{font-family:var(--font-mono); font-size:10px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
 .recognition .credits{font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; color:var(--text-muted-on-dark); line-height:2}
 
 /* ---- site footer ---- */
@@ -162,7 +162,7 @@ a:hover{color:var(--rust-hover)}
 .site-footer .sub{font-family:var(--font-mono); font-size:10px; letter-spacing:0.16em; color:var(--text-muted-on-dark); margin-top:4px}
 .site-footer .foot-links{display:flex; gap:20px; flex-wrap:wrap; font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em}
 .site-footer .foot-links a{color:var(--wheat)}
-.site-footer .foot-links a:hover{color:var(--rust)}
+.site-footer .foot-links a:hover{color:var(--rust-hover)}
 .site-footer .foot-meta{font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
 
 /* ---- shared responsive ---- */

@@ -111,8 +111,9 @@ a:hover{color:var(--rust-hover)}
   padding:22px var(--space-7); background:var(--bone)}
 .site-nav .brand{display:flex; align-items:center; gap:12px}
 .site-nav .brand img{width:57px; height:40px; object-fit:contain}
+.site-nav .brand > :last-child{display:flex; flex-direction:column; gap:2px}  /* wordmark + sub, consistent spacing across pages */
 .site-nav .wm{font-family:var(--font-display); font-size:15px; line-height:1.1; color:var(--night); display:block}
-.site-nav .sub{font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-label-widest); color:var(--rust)}
+.site-nav .sub{font-family:var(--font-mono); font-size:11px; line-height:1; letter-spacing:var(--track-label-widest); color:var(--rust)}
 .site-nav .links{display:flex; align-items:center; gap:26px}
 .site-nav .menu{display:flex; gap:24px; font-size:14px; font-weight:500}
 .site-nav .menu a{color:var(--night)}

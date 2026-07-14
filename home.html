@@ -25,7 +25,6 @@
   .site-nav .brand img{width:57px; height:40px; object-fit:contain}
   .site-nav .wm{font-family:var(--font-display); font-size:15px; line-height:1.1; color:var(--night)}
   .site-nav .sub{font-family:var(--font-mono); font-size:9px; letter-spacing:var(--track-label-widest); color:var(--rust)}
-  .site-nav .links{display:flex; align-items:center; gap:26px}
   .site-nav .menu{display:flex; gap:24px; font-size:14px; font-weight:500; color:var(--night)}
   .site-nav .menu a{color:var(--night)}
   .site-nav .menu a:hover{color:var(--rust)}
@@ -67,9 +66,13 @@
 
   /* ---------- from the trail ---------- */
   .trail{background:var(--bone); padding:44px var(--space-9);
-    display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap}
+    display:flex; align-items:center; gap:40px; flex-wrap:wrap}
+  .trail-img{width:360px; height:230px; object-fit:cover; object-position:center 58%;
+    border-radius:var(--radius-frame); flex:0 0 auto}
+  .trail-body{display:flex; flex-direction:column; align-items:flex-start; gap:14px; flex:1; min-width:280px}
   .trail .label{font-family:var(--font-mono); font-size:11px; letter-spacing:0.2em; color:var(--rust)}
-  .trail h2{font-family:var(--font-display); font-weight:400; font-size:28px; line-height:1.25; color:var(--night); max-width:720px; margin:10px 0 0}
+  .trail h2{font-family:var(--font-display); font-weight:400; font-size:28px; line-height:1.25; color:var(--night); max-width:640px; margin:6px 0 4px}
+  @media (max-width:720px){ .trail-img{width:100%; height:200px} }
   .btn-ghost-light{border:1px solid var(--outline-btn-on-light); color:var(--night); font-size:15px; padding:12px 24px}
   .btn-ghost-light:hover{border-color:var(--night); color:var(--night)}
 
@@ -98,9 +101,6 @@
     .press .items{grid-template-columns:1fr}
   }
   @media (max-width:720px){
-    .site-nav{flex-direction:column; align-items:flex-start; gap:14px; padding:18px 22px}
-    .site-nav .links{flex-direction:column; align-items:flex-start; gap:14px; width:100%}
-    .site-nav .menu{flex-wrap:wrap; gap:14px 18px}
     .hero{height:auto; min-height:88svh}
     .hero .stack{position:static; padding:220px 22px 48px}
     .hero h1{font-size:38px}
@@ -166,11 +166,12 @@
 
 <!-- FROM THE TRAIL -->
 <section class="trail">
-  <div>
+  <img class="trail-img" src="assets/photos/carrizo-camp.jpg" alt="The family sheep camp high on the Carrizos">
+  <div class="trail-body">
     <span class="label">FROM THE TRAIL · 2022</span>
     <h2>After 50 years, the sheep walked the mountain trail again.</h2>
+    <a class="btn btn-ghost-light" href="our-story.html">Read our story</a>
   </div>
-  <a class="btn btn-ghost-light" href="our-story.html">Read our story</a>
 </section>
 
 <!-- IN THE NEWS (press teaser) -->
@@ -198,7 +199,7 @@
 <!-- RECOGNITION -->
 <div class="recognition">
   <span class="label">RECOGNITION</span>
-  <span class="credits">ARIZONA HIGHWAYS · THREE FEATURES 2021–2023&nbsp;&nbsp;·&nbsp;&nbsp;JAMIE'S AMERICAN ROAD TRIP, 2009&nbsp;&nbsp;·&nbsp;&nbsp;"JAMIE'S AMERICA" COOKBOOK&nbsp;&nbsp;·&nbsp;&nbsp;NATIVE AMERICAN RIGHTS FUND&nbsp;&nbsp;·&nbsp;&nbsp;SLOW FOOD PRESIDIUM</span>
+  <span class="credits">DINÉ BÍ 'IINÁ NÁSYÓÓLEEL AWARD · NAVAJO NATION 2026&nbsp;&nbsp;·&nbsp;&nbsp;ARIZONA HIGHWAYS · THREE FEATURES 2021–2023&nbsp;&nbsp;·&nbsp;&nbsp;JAMIE'S AMERICAN ROAD TRIP, 2009&nbsp;&nbsp;·&nbsp;&nbsp;"JAMIE'S AMERICA" COOKBOOK&nbsp;&nbsp;·&nbsp;&nbsp;NATIVE AMERICAN RIGHTS FUND&nbsp;&nbsp;·&nbsp;&nbsp;SLOW FOOD PRESIDIUM</span>
 </div>
 
 <!-- FOOTER -->
@@ -220,5 +221,6 @@
   <div class="foot-meta">© 2026 Kady Youth Sheep Camp</div>
 </footer>
 
+<script src="site.js" defer></script>
 </body>
 </html>

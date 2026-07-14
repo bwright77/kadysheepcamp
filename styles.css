@@ -118,6 +118,12 @@ a:hover{color:var(--rust-hover)}
 .site-nav .menu a{color:var(--night)}
 .site-nav .menu a:hover{color:var(--rust)}
 .site-nav .menu a.current{color:var(--rust); border-bottom:2px solid var(--rust); padding-bottom:2px}
+/* hamburger toggle — injected by site.js, hidden on desktop */
+.nav-toggle{display:none; background:none; border:0; padding:6px; cursor:pointer; color:var(--night); line-height:0}
+.nav-toggle svg{stroke:currentColor; stroke-width:2; fill:none; stroke-linecap:round}
+.nav-toggle .ic-close{display:none}
+.site-nav.nav-open .nav-toggle .ic-open{display:none}
+.site-nav.nav-open .nav-toggle .ic-close{display:inline}
 
 /* ---- buttons ---- */
 .btn{font-weight:600; border-radius:var(--radius-btn); white-space:nowrap; display:inline-block}
@@ -130,7 +136,12 @@ a:hover{color:var(--rust-hover)}
 .btn-ghost-light:hover{border-color:var(--night); color:var(--night)}
 
 /* ---- page header ---- */
-.page-head{background:var(--night); padding:64px var(--space-9) 52px; display:flex; flex-direction:column; gap:14px}
+.page-head{position:relative; overflow:hidden; background:var(--night); padding:64px var(--space-9) 52px; display:flex; flex-direction:column; gap:14px}
+/* optional background hero: <img class="ph-bg"> + <div class="ph-scrim"> as first children of .page-head */
+.page-head > *{position:relative; z-index:1}
+.page-head > .ph-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0}
+.page-head > .ph-scrim{position:absolute; inset:0; z-index:0;
+  background:linear-gradient(180deg, rgba(12,25,34,0.80) 0%, rgba(12,25,34,0.60) 45%, rgba(12,25,34,0.90) 100%)}
 .page-head .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
 .page-head h1{font-family:var(--font-display); font-weight:400; font-size:var(--text-h1); line-height:1.15; color:var(--bone); margin:0}
 .page-head .lead{font-size:var(--text-body-lg); line-height:var(--leading-body); color:var(--text-body-on-dark); max-width:680px; margin:8px 0 0}
@@ -168,9 +179,12 @@ a:hover{color:var(--rust-hover)}
 /* ---- shared responsive ---- */
 @media (max-width:900px){ .site-nav .menu{gap:18px; font-size:13px} }
 @media (max-width:720px){
-  .site-nav{flex-direction:column; align-items:flex-start; gap:14px; padding:18px 22px}
-  .site-nav .links{flex-direction:column; align-items:flex-start; gap:14px; width:100%}
-  .site-nav .menu{flex-wrap:wrap; gap:14px 18px}
+  .site-nav{flex-wrap:wrap; gap:12px 16px; padding:16px 22px}
+  .site-nav .brand{order:1}
+  .nav-toggle{display:block; order:2; margin-left:auto}
+  .site-nav .links{order:3; flex-basis:100%; display:none; flex-direction:column; align-items:flex-start; gap:16px}
+  .site-nav.nav-open .links{display:flex}
+  .site-nav .menu{flex-direction:column; align-items:flex-start; gap:14px}
   .page-head{padding:44px 24px}
   .band{padding:40px 24px}
   .recognition,.site-footer{padding-left:24px; padding-right:24px}

@@ -12,14 +12,38 @@
   .tiers{background:var(--deep-night); padding:40px var(--space-9) 56px}
   .tgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
   .tier{position:relative; background:var(--night); border:1px solid var(--border-on-dark);
-    border-radius:var(--radius-card); padding:28px 24px; display:flex; flex-direction:column; gap:10px}
-  .tier .amt{font-family:var(--font-display); font-weight:400; font-size:40px; line-height:1; color:var(--bone)}
-  .tier .reward{font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; color:var(--wheat)}
-  .tier p{font-size:14px; line-height:1.6; color:var(--text-body-on-dark); margin:0; flex:1}
-  .tier .btn{align-self:flex-start; margin-top:6px}
+    border-radius:var(--radius-card); padding:16px 16px 24px; display:flex; flex-direction:column; gap:10px}
+  .tier .amt{font-family:var(--font-display); font-weight:400; font-size:40px; line-height:1; color:var(--bone); padding:0 8px}
+  .tier .reward{font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; color:var(--wheat); padding:0 8px}
+  .tier p{font-size:14px; line-height:1.6; color:var(--text-body-on-dark); margin:0; flex:1; padding:0 8px}
+  .tier .btn{align-self:flex-start; margin:6px 0 0 8px}
   .tier.popular{border-color:var(--outline-btn-on-dark)}
-  .tier .flag{position:absolute; top:16px; right:16px; font-family:var(--font-mono); font-size:9px;
+  .tier .flag{position:absolute; top:14px; right:14px; z-index:2; font-family:var(--font-mono); font-size:9px;
     letter-spacing:0.14em; color:var(--action-text); background:var(--action); border-radius:3px; padding:3px 8px}
+
+  /* product mockups */
+  .tier .mock{height:156px; border-radius:var(--radius-card); overflow:hidden; position:relative;
+    display:flex; align-items:center; justify-content:center; margin-bottom:4px}
+  .mock-sticker{background:var(--deep-night)}
+  .mock-sticker .sticker{width:98px; height:98px; background:var(--bone); border-radius:16px;
+    border:2px dashed var(--rust); display:flex; align-items:center; justify-content:center;
+    transform:rotate(-6deg); box-shadow:0 8px 20px rgba(0,0,0,0.45)}
+  .mock-sticker .sticker img{width:62px; height:auto}
+  .mock-garment{background:var(--bone)}
+  .mock-garment .gw{position:relative; width:136px; height:136px}
+  .mock-garment .gw > img.g{width:100%; height:100%; object-fit:contain}
+  .mock-garment .gw > img.logo{position:absolute; left:50%; top:53%; transform:translate(-50%,-50%); width:48px; height:auto}
+  .mock-garment.is-hoody .gw > img.logo{top:60%; width:42px}
+  .mock-poster{background:var(--deep-night)}
+  .mock-poster .poster{width:100px; height:132px; background:var(--night); border:1px solid rgba(222,195,148,0.25);
+    border-radius:3px; box-shadow:0 8px 20px rgba(0,0,0,0.45); display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:9px; padding:12px 10px}
+  .mock-poster .poster img{width:52px; height:auto}
+  .mock-poster .poster span{font-family:var(--font-mono); font-size:5.5px; letter-spacing:0.18em; color:var(--wheat); text-align:center}
+  .mock-bundle{background:var(--deep-night)}
+  .mock-bundle img{width:98px; height:auto}
+  .mock-photo img{width:100%; height:100%; object-fit:cover; object-position:center 62%}
+
   @media (max-width:900px){ .tgrid{grid-template-columns:repeat(2,1fr)} }
   @media (max-width:520px){ .tgrid{grid-template-columns:1fr} }
 </style>
@@ -40,6 +64,8 @@
 </nav>
 
 <header class="page-head">
+  <img class="ph-bg" src="assets/photos/merch-textiles.jpg" alt="" style="object-position:center 45%">
+  <div class="ph-scrim"></div>
   <div class="eyebrow">MERCH · SPONSOR THE CAMP</div>
   <h1>Sponsor the camp, wear the wool</h1>
   <p class="lead">Every gift supports the youth apprenticeship — and comes back to you as a thank-you carrying the ram mark. Pick a tier below; final rewards and fulfillment are still being set up.</p>
@@ -49,12 +75,14 @@
 <section class="tiers">
   <div class="tgrid">
     <article class="tier">
+      <div class="mock mock-sticker"><div class="sticker"><img src="assets/brand/ram-final-night.svg" alt="Ram-mark sticker mockup"></div></div>
       <div class="amt">$5</div>
       <div class="reward">RAM-MARK STICKER</div>
       <p>A vinyl churro-ram sticker for your water bottle, laptop, or truck window.</p>
       <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Sponsor for $5</a>
     </article>
     <article class="tier">
+      <div class="mock mock-poster"><div class="poster"><img src="assets/brand/cloud-mark.svg" alt=""><span>SHAPED FROM CLOUDS</span></div></div>
       <div class="amt">$10</div>
       <div class="reward">CREATION POSTER</div>
       <p>The "Shaped from clouds" print — the creation story and the mark, ready to frame.</p>
@@ -62,24 +90,28 @@
     </article>
     <article class="tier popular">
       <span class="flag">MOST POPULAR</span>
+      <div class="mock mock-garment"><div class="gw"><img class="g" src="assets/merch/tee.svg" alt="Ram-mark t-shirt mockup"><img class="logo" src="assets/brand/ram-final-bone.svg" alt=""></div></div>
       <div class="amt">$25</div>
       <div class="reward">RAM-MARK T-SHIRT</div>
       <p>The ram mark on a soft tee, in the camp's house colors. Sizes to be added.</p>
       <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Sponsor for $25</a>
     </article>
     <article class="tier">
+      <div class="mock mock-garment is-hoody"><div class="gw"><img class="g" src="assets/merch/hoody.svg" alt="Ram-mark hoody mockup"><img class="logo" src="assets/brand/ram-final-bone.svg" alt=""></div></div>
       <div class="amt">$50</div>
-      <div class="reward">CANVAS TOTE + STICKER</div>
-      <p>A sturdy mark-stamped tote for the market, plus the sticker.</p>
+      <div class="reward">RAM-MARK HOODY</div>
+      <p>A heavyweight hoody carrying the ram mark — warm for camp mornings and the trail.</p>
       <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Sponsor for $50</a>
     </article>
     <article class="tier">
+      <div class="mock mock-bundle"><img src="assets/brand/ram-final-wheat.svg" alt="The full kit"></div>
       <div class="amt">$100</div>
       <div class="reward">THE FULL BUNDLE</div>
-      <p>Tee, tote, poster, and sticker together — the whole kit, and a thank-you from the flock.</p>
+      <p>Tee, poster, and sticker together — the whole kit, and a thank-you from the flock.</p>
       <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Sponsor for $100</a>
     </article>
     <article class="tier">
+      <div class="mock mock-photo"><img src="assets/photos/loom-detail.jpg" alt="Handwoven churro wool on the loom"></div>
       <div class="amt">Custom</div>
       <div class="reward">HANDWOVEN CHURRO PIECE</div>
       <p>A one-of-a-kind weaving from the flock's own wool. Limited — reach us to inquire.</p>
@@ -106,5 +138,6 @@
   <div class="foot-meta">© 2026 Kady Youth Sheep Camp</div>
 </footer>
 
+<script src="site.js" defer></script>
 </body>
 </html>

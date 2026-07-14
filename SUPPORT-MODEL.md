@@ -16,95 +16,138 @@ camp" experience, processed through **Confluence Colorado's Stripe account**.
   doesn't need its own nonprofit status or merchant account.
 - Because a reward has fair-market value (FMV), the IRS "quid pro quo" rules apply: the
   **deductible portion = amount given − FMV of the reward**. The page and the receipt must
-  state the FMV of each reward so donors know their deductible amount. This is the single
-  biggest reason to frame it as *support with a thank-you*, not a sale.
-- The site is a **static site on Vercel** — no backend, no database, no server we control.
-  The payment flow must live in something hosted (Stripe), not in our own server.
+  state the FMV so donors know their deductible amount. This is the single biggest reason to
+  frame it as *support with a thank-you*, not a sale.
+- The site is a **static site on Vercel** — no backend we control. The payment flow lives in
+  Stripe (hosted), not in our own server.
 
-## 2. Recommended approach — Stripe Payment Links (no backend)
+## 2. Reward economics — the 5-step model
 
-Stripe **Payment Links** are hosted checkout URLs. They are created *inside Confluence's
-Stripe account*, so all funds settle to Confluence and the camp never touches card data or
-API keys. Our static site is just buttons that link out. This is the lowest-risk, lowest-
-maintenance option and keeps the two orgs cleanly separated.
+### Step 1 — Set the Fair Market Value (FMV)
+Research local/retail prices for each item: what it would cost if sold directly in an online
+store. That number is the FMV, and it's what gets subtracted from a gift to find the
+deductible portion.
 
-**One Payment Link per path:**
+| Item | FMV (draft) |
+|---|---|
+| Sticker | $2 |
+| Poster | $10 |
+| T-shirt | $25 |
+| Hoodie | $50 |
+| Bundle | $75 |
 
-| Link | Type | Collects | Note shown |
-|---|---|---|---|
-| Give any amount | "Customer chooses price" | email | 100% tax-deductible |
-| $5 · Sticker | Fixed $5 | email + **shipping address** | ~$2 FMV; ~$3 deductible |
-| $10 · Poster | Fixed $10 | email + shipping | ~$5 FMV |
-| $25 · Tee | Fixed $25, **size selector** | email + shipping | ~$12 FMV |
-| $50 · Hoody | Fixed $50, size selector | email + shipping | ~$25 FMV |
-| $100 · Bundle | Fixed $100 | email + shipping | ~$40 FMV |
-| Handwoven piece | "Contact us" (not a link) | — | commissioned, inquire |
+### Step 2 — Set the donation multipliers
+Price each donation level at **3×–4× the item's retail value**, and keep **fulfillment cost
+under 20% of the incoming donation**. This is what makes it *support with a thank-you* rather
+than a thinly-disguised sale.
 
-Configuration notes for whoever sets these up in Stripe:
-- **Product/price** per tier; enable **"collect shipping address"** on reward links only.
-- **Sizes** (tee/hoody): add a Price with adjustable quantity won't do sizes — instead use
-  a product with a **custom field** (dropdown: S/M/L/XL) on the Payment Link.
-- Turn on **Stripe tax receipts / custom receipt text** referencing Confluence's EIN and the
-  FMV/deductible language.
-- Set the statement descriptor to something like `CONFLUENCE CO / KADY CAMP`.
-- Confluence can restrict/track these via a Stripe **"Kady Youth Sheep Camp"** product group
-  or metadata (`fund: kady-youth-sheep-camp`) so reporting is clean.
+| Tier | Donation | Reward | FMV | ≈ multiplier |
+|---|---|---|---|---|
+| Give any amount | any | — (no reward) | $0 | — |
+| Sticker | **$15** | Ram-mark sticker | $2 | 7.5× (token gift) |
+| Poster | **$35** | Creation poster | $10 | 3.5× |
+| T-shirt | **$75** | Ram-mark tee | $25 | 3× |
+| Hoodie | **$150** | Ram-mark hoody | $50 | 3× |
+| Bundle | **$250** | The full kit | $75 | 3.3× |
+| Handwoven piece | inquire | commissioned weaving | — | direct |
 
-## 3. What we build on the site
+### Step 3 — Write the legal receipt copy
+The automated donor-receipt email states the deductible math explicitly:
+*deduction = total donation − FMV of the gift.*
 
-Replace the separate **Merch** page and the **Support the Camp** button target with one page:
-`support.html` (nav label **"Support"**; keep `/merch` and `/support` both pointing here).
+> **Example:** "Thank you for your **$150** gift. Because you received a hoodie (FMV **$50**),
+> your tax-deductible contribution is **$100**."
 
-Page structure:
-1. **Hero** (existing pattern) — headline that makes the framing explicit, e.g.
-   *"Support the camp — every gift keeps the apprenticeship going."*
-2. **Give any amount** — a prominent primary block → the flexible Payment Link. Copy: "Give
-   directly to the camp through Confluence Colorado. 100% tax-deductible; no reward, all
-   impact."
-3. **Support with a thank-you** — the reward tiers (sticker → bundle), each card:
-   product mockup, amount, what you get, **FMV / deductible line**, and a button → its
-   Payment Link. This reuses the mockups already in `assets/merch/`.
-4. **Handwoven piece** — "Inquire" → Contact page (commissioned, not checkout).
-5. **Fine print** — one paragraph: fiscal sponsorship by Confluence Colorado, tax-deductible
-   minus FMV, rewards shipped by the camp, allow N weeks, questions → contact.
+Stripe receipts support custom text; Confluence's EIN and this formula go in the footer.
 
-No code touches Stripe keys. Each button is `<a href="https://buy.stripe.com/...">`.
+### Step 4 — Tag the "token gifts"
+Separate the **low-value tier (sticker)** from the **apparel tiers**. Inexpensive items that
+carry the org's logo fall under the **IRS "insubstantial benefit" / low-cost-article safe
+harbors**, so a donor at the sticker tier can claim a **100% deduction with no FMV math**.
+(The exact cost/donation thresholds are indexed annually — Confluence's accountant confirms
+the current numbers, but a $2 logo sticker at a $15 gift is comfortably inside them.)
 
-## 4. Fulfillment & operations (Confluence + camp)
+- **Sticker tier → receipt says "100% tax-deductible."**
+- **Poster and up → receipt shows the donation − FMV math from Step 3.**
 
-- **Orders / addresses:** reward Payment Links collect shipping addresses; these appear in
-  Confluence's Stripe dashboard. Agree how the camp gets them — options: (a) camp gets
-  read-only Stripe dashboard access filtered to the Kady product group, or (b) Stripe emails
-  a receipt + a Zapier/Make automation drops orders into a shared Google Sheet the camp works
-  from. (b) is cleanest if Confluence doesn't want to share dashboard access.
-- **Receipts / acknowledgment:** Stripe sends the payment receipt automatically. Confluence
-  issues the formal **tax-acknowledgment letter** (with FMV subtracted) per their normal
-  donor process — confirm their threshold and cadence.
-- **Inventory:** camp holds sticker/poster/tee/hoody stock; mark a tier "sold out" by pausing
-  its Payment Link and hiding/greying its card.
+### Step 5 — Build the automated shipping pipeline
+Connect a **print-on-demand supplier** (e.g. Printful / Printify) to the checkout so rewards
+are produced and shipped automatically — no packing boxes by hand, and no inventory to hold.
+Add an **"I'd rather not receive the reward" opt-out checkbox** to the donation form:
+opting out means 100% deductible *and* nothing to fulfill.
 
-## 5. Alternative if more control is needed later
+> Integration note: Stripe Payment Links don't call a POD service on their own. Wire it with
+> a **Stripe webhook → automation (Zapier/Make) → Printful order**, or use a fundraising/
+> checkout platform that has POD built in. Confluence's tooling choice (§7) decides which.
 
-If down the road you want on-site checkout (no redirect), matching branding, or upsells:
-- **Stripe Checkout via a Vercel serverless function** — needs Confluence's Stripe *secret
-  key* deployed to the camp's Vercel project, which mixes the two orgs' credentials and adds
-  PCI/ops burden. Only worth it if the redirect UX becomes a real problem.
-- **A donation platform Confluence already uses** (Givebutter, Donorbox, Classy) — if
-  Confluence prefers their existing tooling, embed that instead of raw Stripe. Ask Confluence
-  what they run today; matching it may be less work than net-new Payment Links.
+## 3. Recommended payment path — Stripe Payment Links (no backend)
 
-**Recommendation:** ship Payment Links first (fast, safe, no backend). Revisit serverless
-Checkout only if the redirect experience proves limiting.
+Stripe **Payment Links** are hosted checkout URLs created *inside Confluence's Stripe account*,
+so all funds settle to Confluence and the camp never touches card data or API keys. Our static
+site is just buttons that link out — lowest-risk, lowest-maintenance, keeps the two orgs
+cleanly separated.
 
-## 6. Open questions for Confluence Colorado
+**One Payment Link per path** (tiers from §2):
 
-1. Do you want us on **raw Stripe Payment Links**, or your existing donation platform?
-2. Who creates/owns the Payment Links — and how should the camp receive **shipping addresses**?
-3. Confirm the **FMV** to print for each reward (values above are placeholders).
-4. Your preferred **receipt / tax-acknowledgment** language and EIN to display.
+- **Give any amount** — "customer chooses price"; collects email; receipt says 100% deductible.
+- **$15 Sticker** — fixed; collects email + shipping (unless opted out); 100% deductible.
+- **$35 / $75 / $150 / $250** — fixed; collect email + shipping; apparel links add a **size**
+  custom field (S/M/L/XL); receipts show the FMV math.
+- **Handwoven piece** — "contact us", not a checkout link.
+
+Config notes: enable shipping-address + the opt-out on reward links, set custom receipt text
+per Step 3, statement descriptor `CONFLUENCE CO / KADY CAMP`, and a metadata tag
+`fund: kady-youth-sheep-camp` for clean reporting.
+
+## 4. What we build on the site
+
+Replace the separate **Merch** page and the **Support** button target with one page,
+`support.html` (nav label **"Support"**; keep `/merch` and `/support` pointing here):
+
+1. **Hero** — headline making the framing explicit: *"Support the camp — every gift keeps the
+   apprenticeship going."*
+2. **Give any amount** — prominent primary block → the flexible Payment Link (100% deductible).
+3. **Support with a thank-you** — the reward tiers from §2, each card: product mockup, donation
+   amount, what you get, the **FMV / deductible line**, and a button → its Payment Link. Reuses
+   the mockups already in `assets/merch/`.
+4. **Handwoven piece** — "Inquire" → Contact page.
+5. **Fine print** — fiscal sponsorship by Confluence Colorado, deduction = donation − FMV
+   (with the token-gift note), rewards shipped via print-on-demand, opt-out available.
+
+> **Note:** the current `merch.html` still shows placeholder sponsor amounts
+> ($5/$10/$25/$50/$100). Those get replaced by the §2 tiers when we build `support.html`.
+
+## 5. Fulfillment & operations (Confluence + camp)
+
+- **Rewards:** print-on-demand (Step 5) — orders flow from checkout to the supplier
+  automatically; no inventory. Opt-out means nothing to ship.
+- **Receipts:** Stripe sends the payment receipt with the Step 3 deductible language;
+  Confluence issues any formal year-end acknowledgment per their donor process.
+- **Reporting:** the `fund` metadata tag lets Confluence report Kady gifts separately.
+
+## 6. Alternative if more control is needed later
+
+- **Stripe Checkout via a Vercel serverless function** — on-site checkout, but needs
+  Confluence's Stripe secret key on the camp's Vercel (mixes orgs' credentials + PCI/ops
+  burden). Only if the redirect UX becomes a real problem.
+- **A donation platform Confluence already uses** (Givebutter, Donorbox, Classy) — several
+  bundle POD + receipts + opt-out logic already. If Confluence runs one, matching it may be
+  less work than net-new Payment Links + Zapier.
+
+**Recommendation:** ship Payment Links + POD automation first. Revisit serverless Checkout
+only if needed.
+
+## 7. Open questions for Confluence Colorado
+
+1. **Raw Stripe Payment Links**, or an existing donation platform (which may already do POD +
+   receipts + opt-out)?
+2. Who creates/owns the Payment Links, and which **print-on-demand** supplier do we connect?
+3. Confirm the **FMVs** in §2 (drafts) and the current **token-gift safe-harbor thresholds**
+   with your accountant.
+4. Preferred **receipt / acknowledgment** language and **EIN** to display.
 5. A **fund/metadata tag** so Kady gifts report separately inside your Stripe.
 
 ---
 
 *Prepared as a build plan — no payment code has been written. Next step is a short call with
-Confluence to answer §6, then we wire the buttons to their links.*
+Confluence to answer §7, then we wire the buttons to their links.*

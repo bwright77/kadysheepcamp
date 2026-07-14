@@ -112,7 +112,7 @@ a:hover{color:var(--rust-hover)}
 .site-nav .brand{display:flex; align-items:center; gap:12px}
 .site-nav .brand img{width:57px; height:40px; object-fit:contain}
 .site-nav .wm{font-family:var(--font-display); font-size:15px; line-height:1.1; color:var(--night); display:block}
-.site-nav .sub{font-family:var(--font-mono); font-size:9px; letter-spacing:var(--track-label-widest); color:var(--rust)}
+.site-nav .sub{font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-label-widest); color:var(--rust)}
 .site-nav .links{display:flex; align-items:center; gap:26px}
 .site-nav .menu{display:flex; gap:24px; font-size:14px; font-weight:500}
 .site-nav .menu a{color:var(--night)}
@@ -145,7 +145,7 @@ a:hover{color:var(--rust-hover)}
 .page-head .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
 .page-head h1{font-family:var(--font-display); font-weight:400; font-size:var(--text-h1); line-height:1.15; color:var(--bone); margin:0}
 .page-head .lead{font-size:var(--text-body-lg); line-height:var(--leading-body); color:var(--text-body-on-dark); max-width:680px; margin:8px 0 0}
-.page-head .pending{align-self:flex-start; font-family:var(--font-mono); font-size:9px; letter-spacing:0.14em;
+.page-head .pending{align-self:flex-start; font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em;
   color:var(--wheat); border:1px solid var(--outline-btn-on-dark); border-radius:3px; padding:4px 9px; margin-top:4px}
 
 /* ---- generic content band ---- */
@@ -153,7 +153,7 @@ a:hover{color:var(--rust-hover)}
 .band-dark{background:var(--deep-night)}
 .band-night{background:var(--night)}
 .band-bone{background:var(--bone); color:var(--night)}
-.band .b-eyebrow{font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-label-wide); color:var(--label-on-dark)}
+.band .b-eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--label-on-dark)}
 .band-bone .b-eyebrow{color:var(--label-on-light)}
 .band h2{font-family:var(--font-display); font-weight:400; font-size:var(--text-h2); line-height:1.2; margin:12px 0 0}
 .band > p{font-size:16px; line-height:var(--leading-body); max-width:720px; margin:14px 0 0}
@@ -163,25 +163,26 @@ a:hover{color:var(--rust-hover)}
 /* ---- recognition strip ---- */
 .recognition{background:var(--deep-night); padding:20px var(--space-9);
   display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-top:1px solid var(--border-on-dark)}
-.recognition .label{font-family:var(--font-mono); font-size:10px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
-.recognition .credits{font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; color:var(--text-muted-on-dark); line-height:2}
+.recognition .label{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
+.recognition .credits{font-family:var(--font-mono); font-size:12px; letter-spacing:0.1em; color:var(--text-muted-on-dark); line-height:2}
 
 /* ---- site footer ---- */
 .site-footer{background:var(--night); padding:40px var(--space-9); display:flex; justify-content:space-between;
   align-items:center; gap:24px; flex-wrap:wrap; border-top:1px solid var(--border-on-dark)}
 .site-footer .wm{font-family:var(--font-display); font-size:16px; color:var(--bone)}
-.site-footer .sub{font-family:var(--font-mono); font-size:10px; letter-spacing:0.16em; color:var(--text-muted-on-dark); margin-top:4px}
-.site-footer .foot-links{display:flex; gap:20px; flex-wrap:wrap; font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em}
+.site-footer .sub{font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; color:var(--text-muted-on-dark); margin-top:4px}
+.site-footer .foot-links{display:flex; gap:20px; flex-wrap:wrap; font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em}
 .site-footer .foot-links a{color:var(--wheat)}
 .site-footer .foot-links a:hover{color:var(--rust-hover)}
-.site-footer .foot-meta{font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
+.site-footer .foot-meta{font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
 
 /* ---- shared responsive ---- */
 @media (max-width:900px){ .site-nav .menu{gap:18px; font-size:13px} }
 @media (max-width:720px){
-  .site-nav{flex-wrap:wrap; gap:12px 16px; padding:16px 22px}
-  .site-nav .brand{order:1}
-  .nav-toggle{display:block; order:2; margin-left:auto}
+  .site-nav{flex-wrap:wrap; gap:12px 16px; padding:16px 22px; align-items:center}
+  .site-nav .brand{order:1; flex:1 1 0; min-width:0}          /* basis 0 → fits beside toggle, then grows; wordmark wraps */
+  .site-nav .brand > :last-child{min-width:0}                 /* let the wordmark column wrap */
+  .nav-toggle{display:block; order:2; flex:0 0 auto}          /* stays beside the brand */
   .site-nav .links{order:3; flex-basis:100%; display:none; flex-direction:column; align-items:flex-start; gap:16px}
   .site-nav.nav-open .links{display:flex}
   .site-nav .menu{flex-direction:column; align-items:flex-start; gap:14px}

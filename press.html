@@ -18,20 +18,7 @@
   a:hover{color:var(--rust-hover)}
   img{max-width:100%; display:block}
 
-  /* ---------- nav (shared with home) ---------- */
-  .site-nav{display:flex; justify-content:space-between; align-items:center; gap:20px;
-    padding:22px var(--space-7); background:var(--bone)}
-  .site-nav .brand{display:flex; align-items:center; gap:12px}
-  .site-nav .brand img{width:57px; height:40px; object-fit:contain}
-  .site-nav .wm{font-family:var(--font-display); font-size:15px; line-height:1.1; color:var(--night)}
-  .site-nav .sub{font-family:var(--font-mono); font-size:9px; letter-spacing:var(--track-label-widest); color:var(--rust)}
-  .site-nav .menu{display:flex; gap:24px; font-size:14px; font-weight:500; color:var(--night)}
-  .site-nav .menu a{color:var(--night)}
-  .site-nav .menu a:hover{color:var(--rust)}
-  .site-nav .menu a.current{color:var(--rust); border-bottom:2px solid var(--rust); padding-bottom:2px}
-  .btn{font-weight:600; border-radius:var(--radius-btn); white-space:nowrap; display:inline-block}
-  .btn-solid{background:var(--action); color:var(--action-text); font-size:14px; padding:10px 20px}
-  .btn-solid:hover{background:var(--action-hover); color:var(--action-text)}
+  /* nav + buttons come from styles.css (shared component layer) */
 
   /* ---------- page header ---------- */
   .page-head{background:var(--night); padding:64px var(--space-9) 52px; display:flex; flex-direction:column; gap:14px}
@@ -42,15 +29,15 @@
   /* ---------- press groups ---------- */
   .groups{background:var(--deep-night); padding:12px var(--space-9) 40px}
   .group{padding:36px 0 4px}
-  .group > .g-label{font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-label-wide); color:var(--wheat); margin-bottom:6px}
+  .group > .g-label{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat); margin-bottom:6px}
   .group > .g-note{font-size:13px; color:var(--text-muted-on-dark); margin:0 0 12px}
 
   .entry{display:grid; grid-template-columns:230px 1fr; gap:24px; align-items:baseline;
     padding:22px 0; border-top:1px solid var(--border-on-dark)}
   .entry .meta{display:flex; flex-direction:column; gap:4px}
-  .entry .out{font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; color:var(--wheat)}
-  .entry .date{font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
-  .entry .type{font-family:var(--font-mono); font-size:9px; letter-spacing:0.14em; color:var(--text-muted-on-dark)}
+  .entry .out{font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--wheat)}
+  .entry .date{font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
+  .entry .type{font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em; color:var(--text-muted-on-dark)}
   .entry a.title{font-family:var(--font-display); font-weight:400; font-size:21px; line-height:1.25; color:var(--bone)}
   .entry a.title:hover{color:var(--wheat)}
   .entry .desc{font-size:15px; line-height:1.6; color:var(--text-body-on-dark); margin:8px 0 0; max-width:640px}
@@ -58,8 +45,8 @@
   /* ---------- recognition ---------- */
   .recognition{background:var(--night); padding:24px var(--space-9);
     display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-top:1px solid var(--border-on-dark)}
-  .recognition .label{font-family:var(--font-mono); font-size:10px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
-  .recognition .credits{font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; color:var(--text-muted-on-dark); line-height:2}
+  .recognition .label{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
+  .recognition .credits{font-family:var(--font-mono); font-size:12px; letter-spacing:0.1em; color:var(--text-muted-on-dark); line-height:2}
 
   @media (max-width:900px){ .site-nav .menu{gap:18px; font-size:13px} }
   @media (max-width:720px){

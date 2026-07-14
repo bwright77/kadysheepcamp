@@ -99,23 +99,25 @@ Config notes: enable shipping-address + the opt-out on reward links, set custom 
 per Step 3, statement descriptor `CONFLUENCE CO / KADY CAMP`, and a metadata tag
 `fund: kady-youth-sheep-camp` for clean reporting.
 
-## 4. What we build on the site
+## 4. What's on the site
 
-Replace the separate **Merch** page and the **Support** button target with one page,
-`support.html` (nav label **"Support"**; keep `/merch` and `/support` pointing here):
+The single support page is **built and live behind the coming-soon gate at `/support`**
+(`support.html`; the "Support the Camp" CTA everywhere points to it). It has:
 
-1. **Hero** — headline making the framing explicit: *"Support the camp — every gift keeps the
-   apprenticeship going."*
-2. **Give any amount** — prominent primary block → the flexible Payment Link (100% deductible).
-3. **Support with a thank-you** — the reward tiers from §2, each card: product mockup, donation
-   amount, what you get, the **FMV / deductible line**, and a button → its Payment Link. Reuses
-   the mockups already in `assets/merch/`.
+1. **Hero** — "Keep the apprenticeship going", framing it as support, not a store.
+2. **Give any amount** — a prominent "Donate directly" block (100% tax-deductible).
+3. **Support with a thank-you** — the §2 reward tiers, each card: product mockup, donation
+   amount, what you get, and the **FMV / deductible line**. Mockups live in `assets/merch/`.
 4. **Handwoven piece** — "Inquire" → Contact page.
-5. **Fine print** — fiscal sponsorship by Confluence Colorado, deduction = donation − FMV
-   (with the token-gift note), rewards shipped via print-on-demand, opt-out available.
 
-> **Note:** the current `merch.html` still shows placeholder sponsor amounts
-> ($5/$10/$25/$50/$100). Those get replaced by the §2 tiers when we build `support.html`.
+**What's still interim / to wire up:**
+- Every "Support for $X" button and the "Donate directly" block currently point to the **same
+  Confluence donation page** — it can't yet capture which tier/reward or a shipping address.
+  Those get swapped for the per-tier **Stripe Payment Links** (§3) once §7 is settled.
+- The FMV / deductible figures on the cards are the **§2 draft values** — confirm with
+  Confluence's accountant.
+- Still to add when we wire Stripe: the **opt-out checkbox** and the print-on-demand hookup (§5),
+  and the fine-print paragraph (fiscal sponsorship, deduction = donation − FMV, shipping).
 
 ## 5. Fulfillment & operations (Confluence + camp)
 

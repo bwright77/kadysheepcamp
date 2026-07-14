@@ -23,6 +23,31 @@
   .tile.soon span{font-family:var(--font-mono); font-size:11px; letter-spacing:0.18em; color:var(--text-muted-on-dark)}
   @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
   @media (max-width:520px){ .grid{grid-template-columns:1fr} }
+
+  /* clickable tiles */
+  .gallery .tile:not(.soon){cursor:zoom-in}
+  .gallery .tile img{transition:transform .35s ease}
+  .gallery .tile:not(.soon):hover img{transform:scale(1.05)}
+  .gallery .tile:focus-visible{outline:2px solid var(--wheat); outline-offset:2px}
+
+  /* lightbox */
+  .lightbox{position:fixed; inset:0; z-index:100; background:rgba(8,14,19,0.95);
+    display:flex; align-items:center; justify-content:center; padding:24px}
+  .lightbox[hidden]{display:none}
+  .lb-stage{margin:0; display:flex; flex-direction:column; align-items:center; gap:14px}
+  .lb-img{max-width:92vw; max-height:82vh; object-fit:contain; border-radius:4px; box-shadow:0 24px 70px rgba(0,0,0,0.6)}
+  .lb-cap{font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em; color:var(--wheat); text-align:center; max-width:80vw}
+  .lb-btn{position:fixed; background:rgba(18,38,52,0.6); border:1px solid var(--outline-btn-on-dark);
+    color:var(--bone); border-radius:50%; width:48px; height:48px; display:flex; align-items:center;
+    justify-content:center; cursor:pointer; transition:background .2s ease, border-color .2s ease}
+  .lb-btn:hover{background:rgba(18,38,52,0.92); border-color:var(--wheat)}
+  .lb-btn svg{width:22px; height:22px; stroke:currentColor; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round}
+  .lb-close{top:18px; right:20px}
+  .lb-prev{left:18px; top:50%; transform:translateY(-50%)}
+  .lb-next{right:18px; top:50%; transform:translateY(-50%)}
+  .lb-count{position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+    font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; color:var(--text-muted-on-dark)}
+  @media (max-width:520px){ .lb-btn{width:42px; height:42px} .lb-prev{left:8px} .lb-next{right:8px} }
 </style>
 </head>
 <body>
@@ -77,6 +102,71 @@
   </nav>
   <div class="foot-meta">© 2026 Kady Youth Sheep Camp</div>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn lb-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button>
+  <button class="lb-btn lb-prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"/></svg></button>
+  <figure class="lb-stage">
+    <img class="lb-img" src="" alt="">
+    <figcaption class="lb-cap"></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></svg></button>
+  <div class="lb-count" aria-live="polite"></div>
+</div>
+
+<script>
+(function(){
+  var tiles = [].slice.call(document.querySelectorAll('.gallery .tile:not(.soon)'));
+  if (!tiles.length) return;
+  var items = tiles.map(function(t){
+    var im = t.querySelector('img'), cap = t.querySelector('figcaption');
+    return { src: im.getAttribute('src'), alt: im.alt || '', cap: cap ? cap.textContent : '' };
+  });
+  var lb = document.getElementById('lightbox');
+  var img = lb.querySelector('.lb-img'), cap = lb.querySelector('.lb-cap'), count = lb.querySelector('.lb-count');
+  var idx = 0, lastFocus = null;
+  function show(i){
+    idx = (i + items.length) % items.length;
+    var it = items[idx];
+    img.src = it.src; img.alt = it.alt;
+    cap.textContent = it.cap;
+    count.textContent = (idx + 1) + ' / ' + items.length;
+  }
+  function open(i){
+    lastFocus = document.activeElement;
+    show(i);
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    lb.querySelector('.lb-close').focus();
+  }
+  function close(){
+    lb.hidden = true;
+    document.body.style.overflow = '';
+    img.src = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  tiles.forEach(function(t, i){
+    t.tabIndex = 0;
+    t.setAttribute('role', 'button');
+    t.setAttribute('aria-label', 'View photo' + (items[i].cap ? ': ' + items[i].cap : ''));
+    t.addEventListener('click', function(){ open(i); });
+    t.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+    });
+  });
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', function(){ show(idx - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', function(){ show(idx + 1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+  });
+})();
+</script>
 
 <script src="site.js" defer></script>
 </body>

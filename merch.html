@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Merch — Kady Youth Sheep Camp</title>
-<meta name="description" content="Sponsor the Kady Youth Sheep Camp — every gift supports the youth apprenticeship and comes back to you as a thank-you from the flock.">
+<title>Support the Camp — Kady Youth Sheep Camp</title>
+<meta name="description" content="Support the Kady Youth Sheep Camp. Give any amount directly, or choose a level and receive a thank-you. Every gift funds the youth apprenticeship.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <style>
+  /* give any amount */
+  .give{background:var(--night); padding:32px var(--space-9); display:flex; justify-content:space-between;
+    align-items:center; gap:24px; flex-wrap:wrap; border-bottom:1px solid var(--border-on-dark)}
+  .give .g-label{font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
+  .give p{font-size:16px; line-height:1.6; color:var(--text-body-on-dark); margin:6px 0 0; max-width:600px}
+
   .tiers{background:var(--deep-night); padding:40px var(--space-9) 56px}
+  .tiers .t-head{font-family:var(--font-mono); font-size:11px; letter-spacing:var(--track-label-wide); color:var(--wheat); margin-bottom:22px}
   .tgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
   .tier{position:relative; background:var(--night); border:1px solid var(--border-on-dark);
     border-radius:var(--radius-card); padding:16px 16px 24px; display:flex; flex-direction:column; gap:10px}
   .tier .amt{font-family:var(--font-display); font-weight:400; font-size:40px; line-height:1; color:var(--bone); padding:0 8px}
   .tier .reward{font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; color:var(--wheat); padding:0 8px}
   .tier p{font-size:14px; line-height:1.6; color:var(--text-body-on-dark); margin:0; flex:1; padding:0 8px}
+  .tier .ded{font-family:var(--font-mono); font-size:10px; letter-spacing:0.04em; color:var(--text-muted-on-dark); padding:0 8px}
   .tier .btn{align-self:flex-start; margin:6px 0 0 8px}
   .tier.popular{border-color:var(--outline-btn-on-dark)}
   .tier .flag{position:absolute; top:14px; right:14px; z-index:2; font-family:var(--font-mono); font-size:9px;
@@ -55,64 +63,80 @@
   </a>
   <div class="links">
     <div class="menu">
-      <a href="our-story.html">Our Story</a><a href="gallery.html">Gallery</a><a href="events.html">Events</a><a href="partners.html">Partners</a><a class="current" href="merch.html">Merch</a><a href="contact.html">Contact</a><a href="press.html">Press</a>
+      <a href="our-story.html">Our Story</a><a href="gallery.html">Gallery</a><a href="events.html">Events</a><a href="partners.html">Partners</a><a href="contact.html">Contact</a><a href="press.html">Press</a>
     </div>
-    <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Support the Camp</a>
+    <a class="btn btn-solid" href="merch.html">Support the Camp</a>
   </div>
 </nav>
 
 <header class="page-head">
   <img class="ph-bg" src="assets/photos/merch-textiles.jpg" alt="" style="object-position:center 45%">
   <div class="ph-scrim"></div>
-  <div class="eyebrow">MERCH · SPONSOR THE CAMP</div>
-  <h1>Sponsor the camp, wear the wool</h1>
-  <p class="lead">Every gift supports the youth apprenticeship — and comes back to you as a thank-you carrying the ram mark. Pick a tier below; final rewards and fulfillment are still being set up.</p>
-  <span class="pending">DRAFT · PLACEHOLDER TIERS &amp; REWARDS</span>
+  <div class="eyebrow">SPONSOR THE CAMP</div>
+  <h1>Sponsor the camp</h1>
+  <p class="lead">Every gift supports the youth apprenticeship — and comes back to you as a thank-you from the flock. Give any amount directly, or choose a level below.</p>
 </header>
 
+<!-- GIVE ANY AMOUNT -->
+<section class="give">
+  <div>
+    <div class="g-label">GIVE ANY AMOUNT</div>
+    <p>Prefer to give directly, with no thank-you gift? Donate to the camp through Confluence Colorado — 100% tax-deductible.</p>
+  </div>
+  <a class="btn btn-solid btn-lg" href="https://www.confluenceco.org/donate/kady-youth-sheep-camp" target="_blank" rel="noopener">Donate directly</a>
+</section>
+
+<!-- SUPPORT WITH A THANK-YOU -->
 <section class="tiers">
+  <div class="t-head">OR — SUPPORT WITH A THANK-YOU</div>
   <div class="tgrid">
     <article class="tier">
       <div class="mock mock-sticker"><div class="sticker"><img src="assets/brand/ram-final-night.svg" alt="Ram-mark sticker mockup"></div></div>
-      <div class="amt">$5</div>
+      <div class="amt">$15</div>
       <div class="reward">RAM-MARK STICKER</div>
       <p>A vinyl churro-ram sticker for your water bottle, laptop, or truck window.</p>
-      <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Sponsor for $5</a>
-    </article>
-    <article class="tier">
-      <div class="mock mock-poster"><div class="poster"><img src="assets/logo_full.jpeg" alt="Camp illustration poster"></div></div>
-      <div class="amt">$10</div>
-      <div class="reward">CAMP POSTER</div>
-      <p>The camp's illustration — the sheep lifted in a beam of light above the flock — printed and ready to frame.</p>
-      <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Sponsor for $10</a>
+      <div class="ded">100% tax-deductible</div>
+      <a class="btn btn-solid" href="https://www.confluenceco.org/donate/kady-youth-sheep-camp" target="_blank" rel="noopener">Sponsor for $15</a>
     </article>
     <article class="tier popular">
       <span class="flag">MOST POPULAR</span>
+      <div class="mock mock-poster"><div class="poster"><img src="assets/logo_full.jpeg" alt="Camp illustration poster"></div></div>
+      <div class="amt">$35</div>
+      <div class="reward">CAMP POSTER</div>
+      <p>The camp's illustration — the sheep lifted in a beam of light above the flock — printed and ready to frame.</p>
+      <div class="ded">≈ $25 tax-deductible · poster FMV $10</div>
+      <a class="btn btn-solid" href="https://www.confluenceco.org/donate/kady-youth-sheep-camp" target="_blank" rel="noopener">Sponsor for $35</a>
+    </article>
+    <article class="tier">
       <div class="mock mock-garment"><div class="gw"><img class="g" src="assets/merch/tee.svg" alt="Ram-mark t-shirt mockup"><img class="logo" src="assets/brand/ram-final-bone.svg" alt=""></div></div>
-      <div class="amt">$25</div>
+      <div class="amt">$75</div>
       <div class="reward">RAM-MARK T-SHIRT</div>
       <p>The ram mark on a soft tee, in the camp's house colors. Sizes to be added.</p>
-      <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Sponsor for $25</a>
+      <div class="ded">≈ $50 tax-deductible · tee FMV $25</div>
+      <a class="btn btn-solid" href="https://www.confluenceco.org/donate/kady-youth-sheep-camp" target="_blank" rel="noopener">Sponsor for $75</a>
     </article>
     <article class="tier">
       <div class="mock mock-garment is-hoody"><div class="gw"><img class="g" src="assets/merch/hoody.svg" alt="Ram-mark hoody mockup"><img class="logo" src="assets/brand/ram-final-bone.svg" alt=""></div></div>
-      <div class="amt">$50</div>
+      <div class="amt">$150</div>
       <div class="reward">RAM-MARK HOODY</div>
       <p>A heavyweight hoody carrying the ram mark — warm for camp mornings and the trail.</p>
-      <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Sponsor for $50</a>
+      <div class="ded">≈ $100 tax-deductible · hoody FMV $50</div>
+      <a class="btn btn-solid" href="https://www.confluenceco.org/donate/kady-youth-sheep-camp" target="_blank" rel="noopener">Sponsor for $150</a>
     </article>
     <article class="tier">
       <div class="mock mock-bundle"><img src="assets/brand/ram-final-wheat.svg" alt="The full kit"></div>
-      <div class="amt">$100</div>
+      <div class="amt">$250</div>
       <div class="reward">THE FULL BUNDLE</div>
-      <p>Tee, poster, and sticker together — the whole kit, and a thank-you from the flock.</p>
-      <a class="btn btn-solid" href="https://www.gofundme.com/f/support-kady-youth-in-keeping-dine-lifeways-alive" target="_blank" rel="noopener">Sponsor for $100</a>
+      <p>Poster, tee, and sticker together — the whole kit, and a thank-you from the flock.</p>
+      <div class="ded">≈ $175 tax-deductible · bundle FMV $75</div>
+      <a class="btn btn-solid" href="https://www.confluenceco.org/donate/kady-youth-sheep-camp" target="_blank" rel="noopener">Sponsor for $250</a>
     </article>
     <article class="tier">
       <div class="mock mock-photo"><img src="assets/photos/loom-detail.jpg" alt="Handwoven churro wool on the loom"></div>
       <div class="amt">Custom</div>
       <div class="reward">HANDWOVEN CHURRO PIECE</div>
       <p>A one-of-a-kind weaving from the flock's own wool. Limited — reach us to inquire.</p>
+      <div class="ded">By commission</div>
       <a class="btn btn-solid" href="contact.html">Inquire</a>
     </article>
   </div>
@@ -128,7 +152,6 @@
     <a href="gallery.html">Gallery</a>
     <a href="events.html">Events</a>
     <a href="partners.html">Partners</a>
-    <a href="merch.html">Merch</a>
     <a href="press.html">Press</a>
     <a href="contact.html">Contact</a>
     <a href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">Facebook</a>

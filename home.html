@@ -71,8 +71,12 @@
   .press .label{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
   .press .all{font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; color:var(--rust-hover)}
   .press .all:hover{color:var(--wheat)}
-  .press .items{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-  .press .item{display:flex; flex-direction:column; gap:6px; padding-top:16px; border-top:1px solid var(--border-on-dark)}
+  .press .items{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+  .press .item{display:flex; flex-direction:column; gap:10px}
+  .press .thumb{display:block; aspect-ratio:16/10; overflow:hidden; border-radius:var(--radius-card);
+    border:1px solid var(--border-on-dark); background:var(--night)}
+  .press .thumb img{width:100%; height:100%; object-fit:cover; transition:transform .45s ease}
+  .press .thumb:hover img{transform:scale(1.045)}
   .press .item .out{font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
   .press .item a.title{font-size:16px; line-height:1.35; color:var(--bone); font-weight:600}
   .press .item a.title:hover{color:var(--wheat)}
@@ -170,14 +174,23 @@
   </div>
   <div class="items">
     <div class="item">
+      <a class="thumb" href="https://www.knau.org/knau-and-arizona-news/2026-07-10/navajo-weavers-keep-traditional-sheep-journey-alive-despite-drought-and-modern-pressures" target="_blank" rel="noopener">
+        <img src="https://npr.brightspotcdn.com/dims4/default/f7fd16a/2147483647/strip/true/crop/6000x3150+0+850/resize/1200x630!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa1%2Fea%2F0be5eb0b44269a6e78e41f34b40b%2Fdsc04079.JPG" alt="An elder and a young boy look out over the green mountain country on the way to sheep camp" loading="lazy">
+      </a>
       <span class="out">KNAU · ARIZONA PUBLIC RADIO · 2026</span>
       <a class="title" href="https://www.knau.org/knau-and-arizona-news/2026-07-10/navajo-weavers-keep-traditional-sheep-journey-alive-despite-drought-and-modern-pressures" target="_blank" rel="noopener">Navajo weavers keep the traditional sheep journey alive</a>
     </div>
     <div class="item">
+      <a class="thumb" href="https://hyperallergic.com/weaver-roy-kady-is-a-shepherd-first/" target="_blank" rel="noopener">
+        <img src="https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/size/w1200/hyperallergic-newspack-s3-amazonaws-com/uploads/2024/06/roy-kady-copy.jpg" alt="Portrait of Roy Kady in turquoise and a feathered cap, holding a weaving loom before a desert mesa" loading="lazy">
+      </a>
       <span class="out">HYPERALLERGIC · 2024</span>
       <a class="title" href="https://hyperallergic.com/weaver-roy-kady-is-a-shepherd-first/" target="_blank" rel="noopener">Weaver Roy Kady Is a Shepherd First</a>
     </div>
     <div class="item">
+      <a class="thumb" href="https://www.arizonahighways.com/article/according-custom" target="_blank" rel="noopener">
+        <img src="https://www.arizonahighways.com/sites/default/files/styles/social_sharing_thumbnail_600x316/public/2023-02/0323_sheep_Hero.jpg?h=a2e8a70c&itok=Vfit3Wu6" alt="A herder stands watch over churro sheep grazing under a wide blue high-desert sky" loading="lazy">
+      </a>
       <span class="out">ARIZONA HIGHWAYS · 2023</span>
       <a class="title" href="https://www.arizonahighways.com/article/according-custom" target="_blank" rel="noopener">According to Custom</a>
     </div>

@@ -32,15 +32,19 @@
   .group > .g-label{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat); margin-bottom:6px}
   .group > .g-note{font-size:13px; color:var(--text-muted-on-dark); margin:0 0 12px}
 
-  .entry{display:grid; grid-template-columns:230px 1fr; gap:24px; align-items:baseline;
-    padding:22px 0; border-top:1px solid var(--border-on-dark)}
+  .entry{display:grid; grid-template-columns:180px 1fr 210px; gap:24px; align-items:start;
+    padding:24px 0; border-top:1px solid var(--border-on-dark)}
   .entry .meta{display:flex; flex-direction:column; gap:4px}
   .entry .out{font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--wheat)}
   .entry .date{font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
   .entry .type{font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em; color:var(--text-muted-on-dark)}
   .entry a.title{font-family:var(--font-display); font-weight:400; font-size:21px; line-height:1.25; color:var(--bone)}
   .entry a.title:hover{color:var(--wheat)}
-  .entry .desc{font-size:15px; line-height:1.6; color:var(--text-body-on-dark); margin:8px 0 0; max-width:640px}
+  .entry .desc{font-size:15px; line-height:1.6; color:var(--text-body-on-dark); margin:8px 0 0; max-width:600px}
+  .entry .thumb{display:block; grid-column:3; align-self:start; aspect-ratio:4/3; overflow:hidden;
+    border-radius:var(--radius-card); border:1px solid var(--border-on-dark); background:var(--night)}
+  .entry .thumb img{width:100%; height:100%; object-fit:cover; transition:transform .45s ease}
+  .entry .thumb:hover img{transform:scale(1.05)}
 
   /* ---------- recognition ---------- */
   .recognition{background:var(--night); padding:24px var(--space-9);
@@ -48,11 +52,13 @@
   .recognition .label{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
   .recognition .credits{font-family:var(--font-mono); font-size:12px; letter-spacing:0.1em; color:var(--text-muted-on-dark); line-height:2}
 
-  @media (max-width:900px){ .site-nav .menu{gap:18px; font-size:13px} }
+  @media (max-width:900px){ .site-nav .menu{gap:18px; font-size:13px}
+    .entry{grid-template-columns:150px 1fr 170px; gap:18px} }
   @media (max-width:720px){
     .page-head,.groups,.recognition{padding-left:24px; padding-right:24px}
     .page-head{padding-top:44px}
-    .entry{grid-template-columns:1fr; gap:8px}
+    .entry{grid-template-columns:1fr; gap:10px}
+    .entry .thumb{grid-column:1; order:-1; aspect-ratio:16/9}
   }
 </style>
 </head>
@@ -95,6 +101,9 @@
         <a class="title" href="https://www.knau.org/knau-and-arizona-news/2026-07-10/navajo-weavers-keep-traditional-sheep-journey-alive-despite-drought-and-modern-pressures" target="_blank" rel="noopener">Navajo weavers keep traditional sheep journey alive despite drought and modern pressures</a>
         <p class="desc">Roy Kady leads apprentices on the annual sheep trailing to the mountain camp, keeping the practice alive against drought and modern pressures.</p>
       </div>
+      <a class="thumb" href="https://www.knau.org/knau-and-arizona-news/2026-07-10/navajo-weavers-keep-traditional-sheep-journey-alive-despite-drought-and-modern-pressures" target="_blank" rel="noopener">
+        <img src="https://npr.brightspotcdn.com/dims4/default/f7fd16a/2147483647/strip/true/crop/6000x3150+0+850/resize/1200x630!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa1%2Fea%2F0be5eb0b44269a6e78e41f34b40b%2Fdsc04079.JPG" alt="An elder and a young boy look out over the green mountain country on the way to sheep camp" loading="lazy">
+      </a>
     </article>
     <article class="entry">
       <div class="meta"><span class="out">Hyperallergic</span><span class="date">June 2024</span></div>
@@ -102,6 +111,9 @@
         <a class="title" href="https://hyperallergic.com/weaver-roy-kady-is-a-shepherd-first/" target="_blank" rel="noopener">Weaver Roy Kady Is a Shepherd First</a>
         <p class="desc">A profile on how shepherding and weaving are one interconnected practice — and how Roy passes both to the next generation.</p>
       </div>
+      <a class="thumb" href="https://hyperallergic.com/weaver-roy-kady-is-a-shepherd-first/" target="_blank" rel="noopener">
+        <img src="https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/size/w1200/hyperallergic-newspack-s3-amazonaws-com/uploads/2024/06/roy-kady-copy.jpg" alt="Portrait of Roy Kady in turquoise and a feathered cap, holding a weaving loom before a desert mesa" loading="lazy">
+      </a>
     </article>
     <article class="entry">
       <div class="meta"><span class="out">KSUT Public Radio</span><span class="date">June 2024</span></div>
@@ -109,6 +121,9 @@
         <a class="title" href="https://www.ksut.org/culture/2024-06-03/navajo-weavers-and-herders-come-together-to-celebrate-churro-sheep-a-breed-once-believed-to-be-extinct" target="_blank" rel="noopener">Navajo weavers and herders come together to celebrate Churro sheep, a breed once believed to be extinct</a>
         <p class="desc">Weavers, herders, and apprentices gather around the Navajo-Churro — the breed at the heart of the camp's work.</p>
       </div>
+      <a class="thumb" href="https://www.ksut.org/culture/2024-06-03/navajo-weavers-and-herders-come-together-to-celebrate-churro-sheep-a-breed-once-believed-to-be-extinct" target="_blank" rel="noopener">
+        <img src="https://npr.brightspotcdn.com/dims4/default/97df9c4/2147483647/strip/true/crop/2016x1058+0+227/resize/1200x630!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fab%2Fc7%2Fa947e7a24268b5f803091119a583%2Fclementschurro1.jpg" alt="A weaver in traditional dress stands in a high-desert pasture on the Navajo Nation" loading="lazy">
+      </a>
     </article>
     <article class="entry">
       <div class="meta"><span class="out">NPR</span><span class="date">June 2010</span></div>
@@ -116,6 +131,9 @@
         <a class="title" href="https://www.npr.org/2010/06/13/127797442/sacred-sheep-revive-navajo-tradition-for-now" target="_blank" rel="noopener">Sacred Sheep Revive Navajo Tradition, For Now</a>
         <p class="desc">A national look at the revival of the Navajo-Churro at Teec Nos Pos, with Roy Kady among its stewards.</p>
       </div>
+      <a class="thumb" href="https://www.npr.org/2010/06/13/127797442/sacred-sheep-revive-navajo-tradition-for-now" target="_blank" rel="noopener">
+        <img src="https://media.npr.org/assets/news/2010/06/12/churro_wide-c98d8ee7e35bb1d38d2eb9ddc927e9a2e4322367.jpg?s=1400&c=85&f=jpeg" alt="Close-up of a horned Navajo-Churro ram" loading="lazy">
+      </a>
     </article>
   </section>
 
@@ -128,6 +146,9 @@
         <a class="title" href="https://www.arizonahighways.com/article/great-horseman-they-called-kady" target="_blank" rel="noopener">The Great Horseman They Called Kady</a>
         <p class="desc">The family namesake — a legendary Diné horseman descended from Long Walk survivors.</p>
       </div>
+      <a class="thumb" href="https://www.arizonahighways.com/article/great-horseman-they-called-kady" target="_blank" rel="noopener">
+        <img src="https://www.arizonahighways.com/sites/default/files/styles/social_sharing_thumbnail_600x316/public/2021-10/1121_culture_1.jpg?h=39615bac&itok=m8N5Rttf" alt="Vintage black-and-white photograph of a Diné horseman on horseback" loading="lazy">
+      </a>
     </article>
     <article class="entry">
       <div class="meta"><span class="out">Arizona Highways</span><span class="date">April 2022</span></div>
@@ -135,6 +156,9 @@
         <a class="title" href="https://www.arizonahighways.com/article/shimas-legacy" target="_blank" rel="noopener">Shimá's Legacy</a>
         <p class="desc">Mary Kady Clah and the weaving tradition she passed down through generations — including her son Roy.</p>
       </div>
+      <a class="thumb" href="https://www.arizonahighways.com/article/shimas-legacy" target="_blank" rel="noopener">
+        <img src="https://www.arizonahighways.com/sites/default/files/styles/social_sharing_thumbnail_600x316/public/2022-03/0422_Culture_OPEN.jpg?h=f14d8a15&itok=T_wxSYzN" alt="A Diné weaver holds weaving tools before a red-rock mesa" loading="lazy">
+      </a>
     </article>
     <article class="entry">
       <div class="meta"><span class="out">Arizona Highways</span><span class="date">March 2023</span></div>
@@ -142,6 +166,9 @@
         <a class="title" href="https://www.arizonahighways.com/article/according-custom" target="_blank" rel="noopener">According to Custom</a>
         <p class="desc">Roy revives a 50-year-old tradition of trailing the flock across the mountains, reconnecting culture, land, and care.</p>
       </div>
+      <a class="thumb" href="https://www.arizonahighways.com/article/according-custom" target="_blank" rel="noopener">
+        <img src="https://www.arizonahighways.com/sites/default/files/styles/social_sharing_thumbnail_600x316/public/2023-02/0323_sheep_Hero.jpg?h=a2e8a70c&itok=Vfit3Wu6" alt="A herder stands watch over churro sheep grazing under a wide blue high-desert sky" loading="lazy">
+      </a>
     </article>
   </section>
 
@@ -153,6 +180,9 @@
         <a class="title" href="https://youtu.be/A56phtuD_bI" target="_blank" rel="noopener">Jamie's American Road Trip — the Navajo Nation episode</a>
         <p class="desc">Jamie Oliver visits Teec Nos Pos, where Roy Kady hosts him for a churro-lamb feast and a night in the hogan.</p>
       </div>
+      <a class="thumb" href="https://youtu.be/A56phtuD_bI" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/A56phtuD_bI/maxresdefault.jpg" alt="Jamie Oliver with his Diné hosts in Arizona — a still from Jamie's American Road Trip" loading="lazy">
+      </a>
     </article>
     <article class="entry">
       <div class="meta"><span class="out">Jamie Oliver</span><span class="date">2009</span><span class="type">COOKBOOK</span></div>
@@ -160,6 +190,9 @@
         <a class="title" href="https://www.jamieoliver.com/recipes/category/books/jamies-america/" target="_blank" rel="noopener">Jamie's America</a>
         <p class="desc">Roy's churro lamb anchors the Arizona chapter of Oliver's American cookbook.</p>
       </div>
+      <a class="thumb" href="https://www.jamieoliver.com/recipes/category/books/jamies-america/" target="_blank" rel="noopener">
+        <img src="https://cdn.sanity.io/images/cq7w2e71/production/452a75d485c064f7ef3cbac745251cdc1dbc17aa-702x1053.jpg" alt="Cover of the cookbook Jamie's America" loading="lazy" style="object-position:center top">
+      </a>
     </article>
   </section>
 
@@ -178,6 +211,9 @@
         <a class="title" href="https://www.fondazioneslowfood.com/en/slow-food-presidia/navajo-churro-sheep/" target="_blank" rel="noopener">Navajo-Churro Sheep Presidium</a>
         <p class="desc">The Slow Food Presidium recognizing the Navajo-Churro — the breed the camp stewards.</p>
       </div>
+      <a class="thumb" href="https://www.fondazioneslowfood.com/en/slow-food-presidia/navajo-churro-sheep/" target="_blank" rel="noopener">
+        <img src="https://www.fondazioneslowfood.com/wp-content/uploads/2015/04/pecora-navajo-churro.jpg" alt="Three Navajo-Churro sheep in a corral" loading="lazy">
+      </a>
     </article>
   </section>
 

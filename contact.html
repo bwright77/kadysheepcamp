@@ -26,7 +26,8 @@
     border-radius:var(--radius-btn); color:var(--bone); font-family:var(--font-body); font-size:15px; padding:11px 13px}
   .field textarea{min-height:110px; resize:vertical}
   .form button{background:var(--action); color:var(--action-text); font-weight:600; font-size:15px;
-    border:0; border-radius:var(--radius-btn); padding:13px 24px; cursor:not-allowed; opacity:0.75}
+    border:0; border-radius:var(--radius-btn); padding:13px 24px; cursor:pointer}
+  .form button:hover{background:var(--action-hover)}
   @media (max-width:820px){ .contact{grid-template-columns:1fr; gap:28px} }
 </style>
 </head>
@@ -50,7 +51,7 @@
   <div class="ph-scrim"></div>
   <div class="eyebrow">CONTACT</div>
   <h1>Reach the camp</h1>
-  <p class="lead">The surest ways to reach us right now are email and Facebook. A contact form is on the way — it isn't connected yet.</p>
+  <p class="lead">Send us a note below, or reach us directly by email or on Facebook.</p>
 </header>
 
 <section class="contact">
@@ -61,12 +62,16 @@
     <div class="row"><div class="k">EMAIL</div><div class="v"><a href="mailto:kadyyouthsheepcamp@gmail.com">kadyyouthsheepcamp@gmail.com</a></div></div>
   </div>
 
-  <form class="form" onsubmit="return false;" aria-label="Contact form (placeholder)">
-    <div class="note">PLACEHOLDER — this form isn't wired up yet. Please email us at kadyyouthsheepcamp@gmail.com or reach us on Facebook for now.</div>
-    <div class="field"><label for="cf-name">NAME</label><input id="cf-name" type="text" placeholder="Your name" disabled></div>
-    <div class="field"><label for="cf-email">EMAIL</label><input id="cf-email" type="email" placeholder="you@example.com" disabled></div>
-    <div class="field"><label for="cf-msg">MESSAGE</label><textarea id="cf-msg" placeholder="A short note…" disabled></textarea></div>
-    <button type="submit" disabled>Send (coming soon)</button>
+  <form class="form" action="https://formsubmit.co/kadyyouthsheepcamp@gmail.com" method="POST" aria-label="Contact form">
+    <input type="hidden" name="_subject" value="New message from kadysheepcamp.org">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="true">
+    <!-- honeypot: bots fill this, humans never see it -->
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px">
+    <div class="field"><label for="cf-name">NAME</label><input id="cf-name" name="name" type="text" placeholder="Your name" required></div>
+    <div class="field"><label for="cf-email">EMAIL</label><input id="cf-email" name="email" type="email" placeholder="you@example.com" required></div>
+    <div class="field"><label for="cf-msg">MESSAGE</label><textarea id="cf-msg" name="message" placeholder="A short note…" required></textarea></div>
+    <button type="submit">Send</button>
   </form>
 </section>
 

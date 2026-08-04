@@ -8,7 +8,7 @@
 ## The idea in one sentence
 
 People **support the camp** (a tax-deductible gift through Confluence Colorado). At certain
-levels, the camp sends a **thank-you** — a sticker, a poster, a shirt, a hoody. It is **not a
+levels, the camp sends a **thank-you** — a sticker, a poster, a shirt, a tote. It is **not a
 store**; it's support, with a gift.
 
 ## Two ways to give
@@ -18,11 +18,11 @@ store**; it's support, with a gift.
 
 | You give | You receive | Tax-deductible part |
 |---|---|---|
-| **$15** | Ram-mark sticker | **All of it** (small logo gift) |
+| **$15** | Apprenticeship sticker | **All of it** (small logo gift) |
 | **$35** ⭐ most popular | Camp poster | ≈ $25 |
-| **$75** | Ram-mark t-shirt | ≈ $50 |
-| **$150** | Ram-mark hoody | ≈ $100 |
-| **$250** | The full bundle (poster + tee + sticker) | ≈ $175 |
+| **$75** | Ram Beam tee (art by Benjamin Mutton) | ≈ $50 |
+| **$75** | Rambo tee | ≈ $50 |
+| **$250** | The full bundle (tote + both tees + poster + sticker) | ≈ $170 |
 | **By commission** | A one-of-a-kind handwoven piece | — |
 
 *Each level is about 3–4× what the gift is worth, so most of every dollar goes to the camp.*
@@ -32,14 +32,14 @@ store**; it's support, with a gift.
 - **Confluence Colorado processes the gifts**, so they stay tax-deductible and the camp
   doesn't need its own nonprofit paperwork or bank/merchant account.
 - The law says if you get a gift, you can only deduct **what you gave minus the gift's value**.
-  So every receipt will say it plainly — e.g. *"Thank you for your $150 gift. Because you
-  received a hoody (value $50), your deductible amount is $100."*
+  So every receipt will say it plainly — e.g. *"Thank you for your $75 gift. Because you
+  received a tee (value $25), your deductible amount is $50."*
 - The **$15 sticker** is small enough to count as a "token gift," so those donors deduct the
   **full amount** with no math.
 
 ## How the gifts get made and shipped
 
-- Shirts, hoodies, posters, and stickers are made and mailed by a **print-on-demand partner** —
+- Shirts, totes, posters, and stickers are made and mailed by a **print-on-demand partner** —
   no boxes to pack, no inventory to store.
 - Donors can **check a box to skip the gift** if they'd rather give 100% and save us the
   shipping.

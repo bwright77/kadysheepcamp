@@ -4,7 +4,7 @@ A plan for merging the **Support** and **Merch** sections into a single "support
 camp" experience, processed through **Confluence Colorado's Stripe account**.
 
 > **Core framing:** This is not a store. You are supporting the youth apprenticeship.
-> At certain levels of support the camp sends a thank-you (sticker, poster, tee, hoody,
+> At certain levels of support the camp sends a thank-you (sticker, poster, tee, tote,
 > a handwoven piece). You can also give any amount with no reward at all.
 
 ---
@@ -30,11 +30,10 @@ deductible portion.
 
 | Item | FMV (draft) |
 |---|---|
-| Sticker | $2 |
-| Poster | $10 |
-| T-shirt | $25 |
-| Hoodie | $50 |
-| Bundle | $75 |
+| Sticker | $5 |
+| Poster | $15 |
+| T-shirt | $35 |
+| Bundle | $90 |
 
 ### Step 2 — Set the donation multipliers
 Price each donation level at **3×–4× the item's retail value**, and keep **fulfillment cost
@@ -44,19 +43,19 @@ than a thinly-disguised sale.
 | Tier | Donation | Reward | FMV | ≈ multiplier |
 |---|---|---|---|---|
 | Give any amount | any | — (no reward) | $0 | — |
-| Sticker | **$15** | Ram-mark sticker | $2 | 7.5× (token gift) |
+| Sticker | **$15** | Apprenticeship sticker | $2 | 7.5× (token gift) |
 | Poster | **$35** | Creation poster | $10 | 3.5× |
-| T-shirt | **$75** | Ram-mark tee | $25 | 3× |
-| Hoodie | **$150** | Ram-mark hoody | $50 | 3× |
-| Bundle | **$250** | The full kit | $75 | 3.3× |
+| Ram Beam tee | **$75** | Ram-beam tee (art by Benjamin Mutton) | $25 | 3× |
+| Rambo tee | **$75** | Rambo tee | $25 | 3× |
+| Bundle | **$250** | Tote + both tees + poster + sticker | $80 | 3.1× |
 | Handwoven piece | inquire | commissioned weaving | — | direct |
 
 ### Step 3 — Write the legal receipt copy
 The automated donor-receipt email states the deductible math explicitly:
 *deduction = total donation − FMV of the gift.*
 
-> **Example:** "Thank you for your **$150** gift. Because you received a hoodie (FMV **$50**),
-> your tax-deductible contribution is **$100**."
+> **Example:** "Thank you for your **$75** gift. Because you received a tee (FMV **$25**),
+> your tax-deductible contribution is **$50**."
 
 Stripe receipts support custom text; Confluence's EIN and this formula go in the footer.
 

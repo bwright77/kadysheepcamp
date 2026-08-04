@@ -9,8 +9,19 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .partners{background:var(--deep-night); padding:20px var(--space-9) 40px}
+  .partners{background:var(--deep-night); padding:0 var(--space-9) 20px}
   .pgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+
+  /* ---- full-width feature block (Presidium) ---- */
+  .feature{background:var(--night); margin:0 var(--space-9) 20px; padding:36px 40px;
+    border:1px solid var(--border-on-dark); border-radius:var(--radius-frame)}
+  .feature .prole{font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--wheat)}
+  .feature h2{font-family:var(--font-display); font-weight:400; font-size:26px; line-height:1.2; color:var(--bone); margin:8px 0 0}
+  .feature p{font-size:15px; line-height:1.65; color:var(--text-body-on-dark); margin:12px 0 0; max-width:720px}
+  .feature .flink{display:inline-block; margin-top:18px; font-family:var(--font-mono); font-size:13px;
+    letter-spacing:0.06em; color:var(--rust-hover)}
+  .feature .flink:hover{color:var(--wheat)}
+  @media (max-width:720px){ .feature{margin-left:24px; margin-right:24px; padding:28px 22px} }
   .pcard{background:var(--night); border:1px solid var(--border-on-dark); border-radius:var(--radius-card);
     padding:28px 24px; display:flex; flex-direction:column; gap:8px; min-height:150px;
     text-decoration:none; transition:border-color .15s ease, transform .15s ease}
@@ -71,6 +82,23 @@
   <p class="lead">The camp's work is carried alongside partners in breed stewardship, food sovereignty, conservation, and Native rights.</p>
 </header>
 
+<section class="feature">
+  <span class="prole">FOOD SOVEREIGNTY &amp; HERITAGE</span>
+  <h2>Navajo-Churro Lamb &amp; Mutton Presidium</h2>
+  <p>Working to strengthen food sovereignty, cultural heritage, and sustainable food pathways for the Navajo-Churro lamb and mutton raised at the camp.</p>
+  <a class="flink" href="https://www.facebook.com/profile.php?id=61586510124950" target="_blank" rel="noopener">Follow on Facebook ↗</a>
+</section>
+
+<section class="partners">
+  <div class="pgrid">
+    <a class="pcard" href="https://www.confluenceco.org/" target="_blank" rel="noopener"><span class="prole">FISCAL SPONSOR</span><span class="pname">Confluence Colorado</span><p>Fiscal sponsor and nonprofit home for the apprenticeship fund.</p><span class="ext">confluenceco.org ↗</span></a>
+    <a class="pcard" href="https://narf.org/" target="_blank" rel="noopener"><span class="prole">LEGAL &amp; ADVOCACY</span><span class="pname">Native American Rights Fund</span><p>Longtime legal advocate for Diné and Native lifeways.</p><span class="ext">narf.org ↗</span></a>
+    <a class="pcard" href="https://www.navajo-churrosheep.com/" target="_blank" rel="noopener"><span class="prole">BREED STEWARDSHIP</span><span class="pname">Navajo-Churro Sheep Association</span><p>Registry and stewards of the Navajo-Churro breed.</p><span class="ext">navajo-churrosheep.com ↗</span></a>
+    <a class="pcard" href="https://www.navajosheepproject.org/" target="_blank" rel="noopener"><span class="prole">BREED RESTORATION</span><span class="pname">Navajo Sheep Project</span><p>Restoring the Navajo-Churro flock and returning sheep to Diné families.</p><span class="ext">navajosheepproject.org ↗</span></a>
+    <a class="pcard" href="https://livestockconservancy.org/" target="_blank" rel="noopener"><span class="prole">CONSERVATION</span><span class="pname">The Livestock Conservancy</span><p>National protector of endangered heritage breeds — the Navajo-Churro among them.</p><span class="ext">livestockconservancy.org ↗</span></a>
+  </div>
+</section>
+
 <section class="slowfood">
   <span class="prole">FOOD SOVEREIGNTY · SLOW FOOD</span>
   <h2>Slow Food</h2>
@@ -83,17 +111,6 @@
     <a href="https://slowfoodturtleisland.org/" target="_blank" rel="noopener">Slow Food Turtle Island</a>
   </div>
   <a class="sf-presidium" href="https://www.fondazioneslowfood.com/en/slow-food-presidia/navajo-churro-sheep/" target="_blank" rel="noopener">Slow Food Presidia » Navajo-Churro Sheep</a>
-</section>
-
-<section class="partners">
-  <div class="pgrid">
-    <a class="pcard" href="https://www.confluenceco.org/" target="_blank" rel="noopener"><span class="prole">FISCAL SPONSOR</span><span class="pname">Confluence Colorado</span><p>Fiscal sponsor and nonprofit home for the apprenticeship fund.</p><span class="ext">confluenceco.org ↗</span></a>
-    <a class="pcard" href="https://narf.org/" target="_blank" rel="noopener"><span class="prole">LEGAL &amp; ADVOCACY</span><span class="pname">Native American Rights Fund</span><p>Longtime legal advocate for Diné and Native lifeways.</p><span class="ext">narf.org ↗</span></a>
-    <a class="pcard" href="https://www.navajo-churrosheep.com/" target="_blank" rel="noopener"><span class="prole">BREED STEWARDSHIP</span><span class="pname">Navajo-Churro Sheep Association</span><p>Registry and stewards of the Navajo-Churro breed.</p><span class="ext">navajo-churrosheep.com ↗</span></a>
-    <a class="pcard" href="https://www.navajosheepproject.org/" target="_blank" rel="noopener"><span class="prole">BREED RESTORATION</span><span class="pname">Navajo Sheep Project</span><p>Restoring the Navajo-Churro flock and returning sheep to Diné families.</p><span class="ext">navajosheepproject.org ↗</span></a>
-    <a class="pcard" href="https://livestockconservancy.org/" target="_blank" rel="noopener"><span class="prole">CONSERVATION</span><span class="pname">The Livestock Conservancy</span><p>National protector of endangered heritage breeds — the Navajo-Churro among them.</p><span class="ext">livestockconservancy.org ↗</span></a>
-    <a class="pcard" href="https://www.facebook.com/profile.php?id=61586510124950" target="_blank" rel="noopener"><span class="prole">FOOD SOVEREIGNTY &amp; HERITAGE</span><span class="pname">Navajo-Churro Lamb &amp; Mutton Presidium</span><p>Working to strengthen food sovereignty, cultural heritage and sustainable food pathways.</p><span class="ext">Follow on Facebook ↗</span></a>
-  </div>
 </section>
 
 <section class="join">

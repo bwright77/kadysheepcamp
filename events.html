@@ -9,21 +9,24 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .events{background:var(--deep-night); padding:12px var(--space-9) 48px}
-  .ev{display:grid; grid-template-columns:150px 1fr auto; gap:24px; align-items:baseline;
-    padding:26px 0; border-top:1px solid var(--border-on-dark)}
-  .ev .when{font-family:var(--font-mono); font-size:12px; letter-spacing:0.1em; color:var(--wheat)}
-  .ev h3{font-family:var(--font-display); font-weight:400; font-size:21px; line-height:1.2; color:var(--bone); margin:0}
-  .ev .where{font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--text-muted-on-dark); margin-top:6px}
-  .ev .desc{font-size:15px; line-height:1.6; color:var(--text-body-on-dark); margin:8px 0 0; max-width:620px}
-  .ev .status{font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em; color:var(--wheat);
-    border:1px solid var(--outline-btn-on-dark); border-radius:3px; padding:4px 9px; white-space:nowrap}
+  .cal-intro{background:var(--deep-night); padding:8px var(--space-9) 0}
+  .cal-intro .lbl{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
+  .cal-intro p{font-size:16px; line-height:1.65; color:var(--text-body-on-dark); margin:10px 0 0; max-width:720px}
+  .calendar{background:var(--deep-night); padding:22px var(--space-9) 48px}
+  .cal-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  .season{background:var(--night); border:1px solid var(--border-on-dark); border-radius:var(--radius-card);
+    padding:26px 28px 30px; display:flex; flex-direction:column; gap:10px}
+  .season .s-head{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  .season .s-name{font-family:var(--font-display); font-weight:400; font-size:27px; line-height:1.05; color:var(--wheat)}
+  .season .s-en{font-family:var(--font-mono); font-size:12px; letter-spacing:0.2em; color:var(--text-muted-on-dark); text-transform:uppercase}
+  .season .s-meaning{font-size:16px; line-height:1.6; color:var(--bone); margin:2px 0 0}
+  .season .s-activities{font-size:14px; line-height:1.7; color:var(--text-body-on-dark); margin:0}
   .fb-callout{background:var(--night); margin:0 var(--space-9) 56px; padding:32px 36px;
     border:1px solid var(--border-on-dark); border-radius:var(--radius-frame);
     display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap}
   .fb-callout .k{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
   .fb-callout p{font-size:16px; line-height:1.6; color:var(--text-body-on-dark); margin:8px 0 0; max-width:560px}
-  @media (max-width:720px){ .ev{grid-template-columns:1fr; gap:8px} .ev .status{justify-self:start}
+  @media (max-width:720px){ .cal-grid{grid-template-columns:1fr}
     .fb-callout{margin-left:24px; margin-right:24px; padding:24px} }
 </style>
 </head>
@@ -46,45 +49,45 @@
   <img class="ph-bg" src="assets/photos/tyrrell-herding.jpg" alt="" style="object-position:center 30%">
   <div class="ph-scrim"></div>
   <div class="eyebrow">EVENTS</div>
-  <h1>Gatherings &amp; the trail</h1>
-  <p class="lead">The camp's biggest gatherings of the year are below — the summer sheep camp, shearing days, and Sheep Is Life. For the day-to-day rhythm of the flock, Facebook is where the camp shares as it happens. Dates below are placeholders until confirmed.</p>
+  <h1>The shepherd's year</h1>
+  <p class="lead">Facebook is our source of truth for events — dates, gatherings, and last-minute changes all live there, so follow the camp to keep up. This page follows the sheep herder's seasonal calendar: the four Diné seasons that shape life with the flock.</p>
   <a class="btn btn-ghost-dark btn-lg" href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener" style="align-self:flex-start; margin-top:6px">Follow the Camp on Facebook</a>
 </header>
 
-<section class="events">
-  <article class="ev">
-    <div class="when">Summer 2026</div>
-    <div>
-      <h3>Youth Sheep Camp Apprenticeship</h3>
-      <div class="where">CARRIZO MOUNTAINS · TEEC NOS POS, AZ</div>
-      <p class="desc">Placeholder. A weekend at the summer sheep camp — herding, shearing, and weaving beside the elders.</p>
-    </div>
-    <span class="status">DATES TBA</span>
-  </article>
-  <article class="ev">
-    <div class="when">Spring 2026</div>
-    <div>
-      <h3>Shearing Day</h3>
-      <div class="where">AT THE HOME CORRAL</div>
-      <p class="desc">Placeholder. The season begins on the sheep's back — hand-shearing the churro fleece.</p>
-    </div>
-    <span class="status">DATES TBA</span>
-  </article>
-  <article class="ev">
-    <div class="when">Annual</div>
-    <div>
-      <h3>Sheep Is Life</h3>
-      <div class="where">DINÉ COLLEGE · TSAILE, AZ</div>
-      <p class="desc">Placeholder. The gathering of weavers, herders, and shepherds celebrating the Navajo-Churro.</p>
-    </div>
-    <span class="status">EXTERNAL</span>
-  </article>
+<div class="cal-intro">
+  <div class="lbl">SHEEP HERDER'S SEASONAL CALENDAR</div>
+  <p>The Diné year turns with the seasons and the flock. Each season carries its own work, its own ceremonies, and its own teachings — beginning with the fall new moon.</p>
+</div>
+
+<section class="calendar">
+  <div class="cal-grid">
+    <article class="season">
+      <div class="s-head"><span class="s-name">Aakʼeigo</span><span class="s-en">Fall</span></div>
+      <p class="s-meaning">With the new moon, Fall marks the start of our Diné New Year — harvest time and preparation for the colder months.</p>
+      <p class="s-activities">Introducing the ram or billy into the flocks and exchanging; harvesting farm crops; collecting wood for weaving tools and basketry materials; gathering fall plants for the colors to dye wool; and preparing winter food — making jerky and storing for the months ahead.</p>
+    </article>
+    <article class="season">
+      <div class="s-head"><span class="s-name">Haigo</span><span class="s-en">Winter</span></div>
+      <p class="s-meaning">Winter focuses on rest and storytelling — the quieter season the Diné use for cultural continuation.</p>
+      <p class="s-activities">Communal Spin-Off gatherings, processing wool, weaving baskets and belts — all while telling our creation and winter stories of the animals as they hibernate, and beginning our winter ceremonies.</p>
+    </article>
+    <article class="season">
+      <div class="s-head"><span class="s-name">Daango</span><span class="s-en">Spring</span></div>
+      <p class="s-meaning">Spring marks a time of renewal and growth — the rejuvenation of the land and the flock.</p>
+      <p class="s-activities">Shearing, drenching, castrating, docking, vaccinating, sheep ceremonies, and planting the early crops.</p>
+    </article>
+    <article class="season">
+      <div class="s-head"><span class="s-name">Shį́į́go</span><span class="s-en">Summer</span></div>
+      <p class="s-meaning">Summer emphasizes warmth and the abundance of resources.</p>
+      <p class="s-activities">Trailing the flocks to summer camp; planting corn, beans, squash, and melons; and foraging herbs, berries, roots, fruits, and corn pollen.</p>
+    </article>
+  </div>
 </section>
 
 <div class="fb-callout">
   <div>
-    <div class="k">DAY TO DAY AT THE CAMP</div>
-    <p>The big gatherings are here — but the everyday life of the flock lives on Facebook: shearing days, new lambs, and last-minute trail updates.</p>
+    <div class="k">FOR DATES &amp; GATHERINGS</div>
+    <p>The calendar above is the rhythm of the year. For actual dates, gatherings, and updates — shearing days, new lambs, the trail to summer camp — Facebook is our source of truth.</p>
   </div>
   <a class="btn btn-solid btn-lg" href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">Follow the Camp on Facebook</a>
 </div>

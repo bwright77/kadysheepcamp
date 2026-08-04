@@ -12,12 +12,31 @@
   .partners{background:var(--deep-night); padding:40px var(--space-9) 56px}
   .pgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
   .pcard{background:var(--night); border:1px solid var(--border-on-dark); border-radius:var(--radius-card);
-    padding:28px 24px; display:flex; flex-direction:column; gap:8px; min-height:150px}
+    padding:28px 24px; display:flex; flex-direction:column; gap:8px; min-height:150px;
+    text-decoration:none; transition:border-color .15s ease, transform .15s ease}
+  a.pcard:hover{border-color:var(--wheat); transform:translateY(-2px)}
   .pcard .pname{font-family:var(--font-display); font-weight:400; font-size:19px; line-height:1.2; color:var(--bone)}
+  a.pcard:hover .pname{color:var(--wheat)}
   .pcard .prole{font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--wheat)}
   .pcard p{font-size:14px; line-height:1.6; color:var(--text-body-on-dark); margin:6px 0 0}
+  .pcard .ext{margin-top:auto; font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; color:var(--rust-hover)}
   @media (max-width:900px){ .pgrid{grid-template-columns:repeat(2,1fr)} }
   @media (max-width:520px){ .pgrid{grid-template-columns:1fr} }
+
+  /* ---- Slow Food block ---- */
+  .slowfood{background:var(--night); margin:0 var(--space-9) 56px; padding:36px 40px;
+    border:1px solid var(--border-on-dark); border-radius:var(--radius-frame)}
+  .slowfood .prole{font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--wheat)}
+  .slowfood h2{font-family:var(--font-display); font-weight:400; font-size:26px; line-height:1.2; color:var(--bone); margin:8px 0 0}
+  .slowfood p{font-size:15px; line-height:1.65; color:var(--text-body-on-dark); margin:12px 0 0; max-width:720px}
+  .sf-links{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px}
+  .sf-links a{font-family:var(--font-mono); font-size:13px; letter-spacing:0.04em; color:var(--bone);
+    border:1px solid var(--outline-btn-on-dark); border-radius:999px; padding:9px 16px; transition:border-color .15s ease, color .15s ease}
+  .sf-links a:hover{border-color:var(--wheat); color:var(--wheat)}
+  .sf-presidium{display:inline-block; margin-top:20px; font-family:var(--font-mono); font-size:13px;
+    letter-spacing:0.06em; color:var(--rust-hover)}
+  .sf-presidium:hover{color:var(--wheat)}
+  @media (max-width:720px){ .slowfood{margin-left:24px; margin-right:24px; padding:28px 22px} }
 </style>
 </head>
 <body>
@@ -40,18 +59,32 @@
   <div class="ph-scrim"></div>
   <div class="eyebrow">PARTNERS</div>
   <h1>Those who walk with us</h1>
-  <p class="lead">The camp's work is carried alongside partners in weaving, food sovereignty, and Native rights. Logos and full descriptions are on the way.</p>
+  <p class="lead">The camp's work is carried alongside partners in breed stewardship, food sovereignty, conservation, and Native rights.</p>
 </header>
 
 <section class="partners">
   <div class="pgrid">
-    <div class="pcard"><span class="prole">FISCAL SPONSOR</span><span class="pname">Confluence Colorado</span><p>Placeholder. Fiscal home for the apprenticeship fund.</p></div>
-    <div class="pcard"><span class="prole">LEGAL &amp; ADVOCACY</span><span class="pname">Native American Rights Fund</span><p>Placeholder. Longtime advocate for Diné lifeways.</p></div>
-    <div class="pcard"><span class="prole">FOOD SOVEREIGNTY</span><span class="pname">Slow Food</span><p>Placeholder. Navajo-Churro Presidium partner.</p></div>
-    <div class="pcard"><span class="prole">BREED STEWARDSHIP</span><span class="pname">Diné be' iiná</span><p>Placeholder. The Navajo Lifeway / churro sheep project.</p></div>
-    <div class="pcard"><span class="prole">PRESIDIUM</span><span class="pname">Navajo-Churro Lamb &amp; Mutton Presidium</span><p>Slow Food Presidium safeguarding Navajo-Churro lamb and mutton as a heritage food.</p></div>
-    <div class="pcard"><span class="prole">JOIN US</span><span class="pname">Become a partner</span><p>Placeholder. Organizations who want to support the camp can reach us on the Contact page.</p></div>
+    <a class="pcard" href="https://www.confluenceco.org/" target="_blank" rel="noopener"><span class="prole">FISCAL SPONSOR</span><span class="pname">Confluence Colorado</span><p>Fiscal sponsor and nonprofit home for the apprenticeship fund.</p><span class="ext">confluenceco.org ↗</span></a>
+    <a class="pcard" href="https://narf.org/" target="_blank" rel="noopener"><span class="prole">LEGAL &amp; ADVOCACY</span><span class="pname">Native American Rights Fund</span><p>Longtime legal advocate for Diné and Native lifeways.</p><span class="ext">narf.org ↗</span></a>
+    <a class="pcard" href="https://www.navajo-churrosheep.com/" target="_blank" rel="noopener"><span class="prole">BREED STEWARDSHIP</span><span class="pname">Navajo-Churro Sheep Association</span><p>Registry and stewards of the Navajo-Churro breed.</p><span class="ext">navajo-churrosheep.com ↗</span></a>
+    <a class="pcard" href="https://www.navajosheepproject.org/" target="_blank" rel="noopener"><span class="prole">BREED RESTORATION</span><span class="pname">Navajo Sheep Project</span><p>Restoring the Navajo-Churro flock and returning sheep to Diné families.</p><span class="ext">navajosheepproject.org ↗</span></a>
+    <a class="pcard" href="https://livestockconservancy.org/" target="_blank" rel="noopener"><span class="prole">CONSERVATION</span><span class="pname">The Livestock Conservancy</span><p>National protector of endangered heritage breeds — the Navajo-Churro among them.</p><span class="ext">livestockconservancy.org ↗</span></a>
+    <a class="pcard" href="contact.html"><span class="prole">JOIN US</span><span class="pname">Become a partner</span><p>Organizations who want to walk with the camp — reach us on the contact page.</p><span class="ext">Get in touch →</span></a>
   </div>
+</section>
+
+<section class="slowfood">
+  <span class="prole">FOOD SOVEREIGNTY · SLOW FOOD</span>
+  <h2>Slow Food</h2>
+  <p>The camp's Navajo-Churro lamb and mutton is safeguarded as a Slow Food Presidium — a heritage food championed across the Slow Food network, from the global movement to Arizona's local chapters and the Indigenous-led Turtle Island Association.</p>
+  <div class="sf-links">
+    <a href="https://www.slowfood.com/" target="_blank" rel="noopener">Slow Food International</a>
+    <a href="https://slowfoodusa.org/" target="_blank" rel="noopener">Slow Food USA</a>
+    <a href="https://www.slowfoodphoenix.org/" target="_blank" rel="noopener">Slow Food Phoenix</a>
+    <a href="https://www.slowfoodsouthernaz.org/" target="_blank" rel="noopener">Slow Food Southern Arizona (Tucson)</a>
+    <a href="https://slowfoodturtleisland.org/" target="_blank" rel="noopener">Slow Food Turtle Island</a>
+  </div>
+  <a class="sf-presidium" href="https://www.fondazioneslowfood.com/en/slow-food-presidia/navajo-churro-sheep/" target="_blank" rel="noopener">Navajo-Churro Lamb &amp; Mutton Presidium →</a>
 </section>
 
 <footer class="site-footer">

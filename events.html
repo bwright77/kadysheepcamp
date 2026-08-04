@@ -18,7 +18,13 @@
   .ev .desc{font-size:15px; line-height:1.6; color:var(--text-body-on-dark); margin:8px 0 0; max-width:620px}
   .ev .status{font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em; color:var(--wheat);
     border:1px solid var(--outline-btn-on-dark); border-radius:3px; padding:4px 9px; white-space:nowrap}
-  @media (max-width:720px){ .ev{grid-template-columns:1fr; gap:8px} .ev .status{justify-self:start} }
+  .fb-callout{background:var(--night); margin:0 var(--space-9) 56px; padding:32px 36px;
+    border:1px solid var(--border-on-dark); border-radius:var(--radius-frame);
+    display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap}
+  .fb-callout .k{font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label-wide); color:var(--wheat)}
+  .fb-callout p{font-size:16px; line-height:1.6; color:var(--text-body-on-dark); margin:8px 0 0; max-width:560px}
+  @media (max-width:720px){ .ev{grid-template-columns:1fr; gap:8px} .ev .status{justify-self:start}
+    .fb-callout{margin-left:24px; margin-right:24px; padding:24px} }
 </style>
 </head>
 <body>
@@ -41,7 +47,7 @@
   <div class="ph-scrim"></div>
   <div class="eyebrow">EVENTS</div>
   <h1>Gatherings &amp; the trail</h1>
-  <p class="lead">Sheep camp weekends, shearing days, and the seasonal trail. Dates below are placeholders — follow the camp on Facebook for confirmed times.</p>
+  <p class="lead">The camp's biggest gatherings of the year are below — the summer sheep camp, shearing days, and Sheep Is Life. For the day-to-day rhythm of the flock, Facebook is where the camp shares as it happens. Dates below are placeholders until confirmed.</p>
   <a class="btn btn-ghost-dark btn-lg" href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener" style="align-self:flex-start; margin-top:6px">Follow the Camp on Facebook</a>
 </header>
 
@@ -74,6 +80,14 @@
     <span class="status">EXTERNAL</span>
   </article>
 </section>
+
+<div class="fb-callout">
+  <div>
+    <div class="k">DAY TO DAY AT THE CAMP</div>
+    <p>The big gatherings are here — but the everyday life of the flock lives on Facebook: shearing days, new lambs, and last-minute trail updates.</p>
+  </div>
+  <a class="btn btn-solid btn-lg" href="https://www.facebook.com/profile.php?id=61583898641618" target="_blank" rel="noopener">Follow the Camp on Facebook</a>
+</div>
 
 <footer class="site-footer">
   <div>

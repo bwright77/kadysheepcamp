@@ -102,10 +102,15 @@
     /* stack the hero: photo on top, text below it (over the dark bg), then the chain */
     .hero{height:auto; min-height:0; overflow:visible; display:flex; flex-direction:column}
     .hero .photo{position:static; width:100%; height:52svh; object-position:center 22%}
-    .hero .protect,.hero .heavens{display:none}
+    .hero .protect{display:none}
+    .hero .heavens{position:static; order:-1; width:100%; height:auto}
     .hero .stack{position:static; padding:32px 24px 40px}
     .hero h1{font-size:38px}
     .hero .lede{font-size:16px}
+    /* stack the hero CTAs and make content buttons near-full-width */
+    .hero .actions{flex-direction:column; align-items:stretch; gap:12px; width:100%}
+    .hero .actions .btn{width:100%; text-align:center}
+    .trail-body .btn{width:100%; text-align:center}
     .mission,.trail,.press,.recognition{padding-left:24px; padding-right:24px}
     .trail h2{font-size:23px}
   }
@@ -170,7 +175,7 @@
 <section class="trail">
   <img class="trail-img" src="assets/photos/carrizo-camp.jpg" alt="The family sheep camp high on the Carrizos">
   <div class="trail-body">
-    <span class="label">FROM THE TRAIL · 2022</span>
+    <span class="label">OUR STORY</span>
     <h2>After 50 years, the sheep walked the mountain trail again.</h2>
     <a class="btn btn-ghost-light" href="our-story.html">Read our story</a>
   </div>

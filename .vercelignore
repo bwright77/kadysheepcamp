@@ -1,0 +1,4 @@
+# Internal / dev-only — kept in the repo, not shipped to the live site
+heroes.html
+brand.html
+*.md

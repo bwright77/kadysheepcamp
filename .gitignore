@@ -3,3 +3,9 @@
 
 # Editor / tooling
 .claude/
+
+# Local design source / scratch (not part of the site)
+*.ai
+/clouds.svg
+/kady_sheep.svg
+/assets/brand/cloud-mark-clay.svg

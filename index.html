@@ -99,11 +99,20 @@
     .press .items{grid-template-columns:1fr}
   }
   @media (max-width:720px){
-    /* overlay the text on the image, same as desktop */
-    .hero{height:100svh}
-    .hero .stack{padding:0 24px}
+    /* overlay the text on the image, same as desktop — but let the hero grow past
+       one screen instead of pinning it, so the copy can't run up under the nav on
+       short phones (the stack is ~650px tall once the lede wraps) */
+    .hero{height:auto; min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end}
+    .hero .stack{position:relative; bottom:auto; padding:24px 24px 40px}
+    /* the copy fills most of the frame here and lands on sunlit fleece, where the
+       desktop gradient is still clear — deepen the veil and lay a second scrim on
+       the stack itself so it tracks the text however the copy wraps */
+    .hero .protect{background:var(--photo-protect-narrow)}
+    .hero .stack::before{content:""; position:absolute; z-index:0;
+      left:0; right:0; top:-120px; bottom:0; background:var(--photo-protect-copy)}
+    .hero .stack > *{position:relative; z-index:1}
     .hero h1{font-size:38px}
-    .hero .lede{font-size:16px}
+    .hero .lede{font-size:16px; color:var(--bone)}
     /* stack the hero CTAs and make content buttons near-full-width */
     .hero .actions{flex-direction:column; align-items:stretch; gap:12px; width:100%}
     .hero .actions .btn{width:100%; text-align:center}

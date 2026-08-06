@@ -66,6 +66,21 @@
   .tl-stat .cap{font-size:17px; line-height:1.6; color:var(--text-body-on-dark); max-width:560px}
   .tl-stat .cap strong{color:var(--bone)}
 
+  /* current apprentices */
+  .apprentices{background:var(--night)}
+  .apprentices .s-title{font-size:34px; color:var(--bone); margin:12px 0 0}
+  .appr-intro{font-size:17px; line-height:1.7; color:var(--text-body-on-dark); max-width:660px; margin:14px 0 40px}
+  .appr-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px}
+  .appr{display:flex; flex-direction:column; background:var(--deep-night);
+    border:1px solid var(--border-on-dark); border-radius:var(--radius-frame); overflow:hidden}
+  .appr > img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center top}
+  .appr figcaption{padding:20px 22px 26px; display:flex; flex-direction:column; gap:6px}
+  .appr .a-name{font-family:var(--font-display); font-weight:400; font-size:20px; line-height:1.15; color:var(--bone)}
+  .appr .a-role{font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; color:var(--wheat)}
+  .appr figcaption p{font-size:14px; line-height:1.6; color:var(--text-body-on-dark); margin:6px 0 0}
+  @media (max-width:900px){ .appr-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:520px){ .appr-grid{grid-template-columns:1fr} }
+
   /* three strands */
   .strands .head{display:flex; flex-direction:column; gap:12px; max-width:640px; margin-bottom:40px}
   .strands .head .s-title{font-size:34px; color:var(--night)}
@@ -188,11 +203,54 @@
       <div class="tl-card"><div class="tl-year">MID-1980s</div><div class="tl-desc">Roy takes over the flock.</div></div>
       <div class="tl-card"><div class="tl-year">2013</div><div class="tl-desc">Shimá passes. Her sheep pass to Roy.</div></div>
       <div class="tl-card"><div class="tl-year">2022</div><div class="tl-desc">Roy revives the trail with family and community — landing, unknowingly, on the 50th anniversary of the last one.</div></div>
-      <div class="tl-card today"><div class="tl-year">TODAY</div><div class="tl-desc">The apprenticeship: youth learn herding, fiber, food, and land beside Roy — and the trail waits for spring.</div></div>
+      <div class="tl-card today"><div class="tl-year">TODAY</div><div class="tl-desc">The apprenticeship: youth learn herding, fiber, food, and land beside Roy — with the flock returning to the trail the second week of October for ceremonial shearing and feeding.</div></div>
     </div>
     <div class="tl-stat">
       <div class="big">4–5</div>
       <div class="cap">active sheep camps remain atop the Carrizo Mountains.<br><strong>This family's is one of them.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT APPRENTICES -->
+<section class="sec apprentices">
+  <div class="wrap-wide">
+    <div class="s-label on-dark">TODAY · THE APPRENTICES</div>
+    <h2 class="s-title">This year's apprentices</h2>
+    <p class="appr-intro">Four young Diné artists learning herding, fiber, food, and the land beside Roy — carrying the lifeways forward.</p>
+    <div class="appr-grid">
+      <figure class="appr">
+        <img src="assets/photos/apprentices/casey-teseny.jpg" alt="Casey Teseny">
+        <figcaption>
+          <div class="a-name">Casey Teseny</div>
+          <div class="a-role">CHAIR · CHINLE, AZ</div>
+          <p>A traditional Navajo potter since 2016 and a former Canyon de Chelly ranger, Casey is a multidisciplinary artist in pottery, yucca fiber, and weaving — set on seeing traditional pieces made and used in the community again.</p>
+        </figcaption>
+      </figure>
+      <figure class="appr">
+        <img src="assets/photos/apprentices/zack-goldtooth.jpg" alt="Zack Goldtooth">
+        <figcaption>
+          <div class="a-name">Zack Goldtooth</div>
+          <div class="a-role">SHIPROCK, NM</div>
+          <p>A Diné artist and weaver who found the traditional beginnings of Navajo weaving at Diné College — a way to reconnect with culture, family, and Diné storytelling, walking in Hózhó.</p>
+        </figcaption>
+      </figure>
+      <figure class="appr">
+        <img src="assets/photos/apprentices/ryann-hadley.jpg" alt="Ryann Hadley">
+        <figcaption>
+          <div class="a-name">Ryann Hadley</div>
+          <div class="a-role">TEEC NOS POS, AZ</div>
+          <p>A Diné Studies student at Diné College, Ryann pairs a love of botany and plant medicine — herbal salves, soaps, and oils — with weaving, eager to turn native plants into natural dyes for Churro wool.</p>
+        </figcaption>
+      </figure>
+      <figure class="appr">
+        <img src="assets/photos/apprentices/naomi-begaye.jpg" alt="Naomi Begaye">
+        <figcaption>
+          <div class="a-name">Naomi Begaye</div>
+          <div class="a-role">SHIPROCK, NM</div>
+          <p>Mother to two sons who are her motivation, Naomi first wove in high school and is relearning the craft as an apprentice — assembling her loom, mastering the spindle, and planning to pass it on to her children.</p>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>

@@ -70,16 +70,19 @@
   .apprentices{background:var(--night)}
   .apprentices .s-title{font-size:34px; color:var(--bone); margin:12px 0 0}
   .appr-intro{font-size:17px; line-height:1.7; color:var(--text-body-on-dark); max-width:660px; margin:14px 0 40px}
-  .appr-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
-  .appr{display:flex; flex-direction:column; background:var(--deep-night);
+  /* flex so an incomplete last row (the bottom 2) centers on its own */
+  .appr-grid{display:flex; flex-wrap:wrap; justify-content:center; gap:22px}
+  .appr{flex:0 1 calc((100% - 44px) / 3); display:flex; flex-direction:column; background:var(--deep-night);
     border:1px solid var(--border-on-dark); border-radius:var(--radius-frame); overflow:hidden}
   .appr > img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center top}
   .appr figcaption{padding:20px 22px 26px; display:flex; flex-direction:column; gap:6px}
   .appr .a-name{font-family:var(--font-display); font-weight:400; font-size:20px; line-height:1.15; color:var(--bone)}
   .appr .a-role{font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; color:var(--wheat)}
   .appr figcaption p{font-size:14px; line-height:1.6; color:var(--text-body-on-dark); margin:6px 0 0}
-  @media (max-width:900px){ .appr-grid{grid-template-columns:repeat(2,1fr)} }
-  @media (max-width:520px){ .appr-grid{grid-template-columns:1fr} }
+  @media (max-width:900px){ .appr{flex-basis:calc((100% - 22px) / 2)} }
+  @media (max-width:520px){ .appr{flex-basis:100%} }
+  /* large desktops: all five in one row (section widened so cards stay comfortable) */
+  @media (min-width:1280px){ .apprentices .wrap-wide{max-width:1400px} .appr{flex-basis:calc((100% - 88px) / 5)} }
 
   /* three strands */
   .strands .head{display:flex; flex-direction:column; gap:12px; max-width:640px; margin-bottom:40px}

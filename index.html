@@ -99,12 +99,9 @@
     .press .items{grid-template-columns:1fr}
   }
   @media (max-width:720px){
-    /* stack the hero: photo on top, text below it (over the dark bg), then the chain */
-    .hero{height:auto; min-height:0; overflow:visible; display:flex; flex-direction:column}
-    .hero .photo{position:static; width:100%; height:52svh; object-position:center bottom}
-    .hero .protect{display:none}
-    /* cloud-steps stays an absolute overlay on the photo's top, as on desktop */
-    .hero .stack{position:static; padding:32px 24px 40px}
+    /* overlay the text on the image, same as desktop */
+    .hero{height:100svh}
+    .hero .stack{padding:0 24px}
     .hero h1{font-size:38px}
     .hero .lede{font-size:16px}
     /* stack the hero CTAs and make content buttons near-full-width */

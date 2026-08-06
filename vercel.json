@@ -2,6 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/events", "destination": "/calendar", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

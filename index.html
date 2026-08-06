@@ -26,7 +26,7 @@
 
   /* ---------- hero ---------- */
   .hero{position:relative; height:1000px; overflow:hidden}
-  .hero .photo{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 2%}
+  .hero .photo{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom}
   .hero .protect{position:absolute; inset:0; background:var(--photo-protect)}
   .hero .heavens{position:absolute; top:0; left:0; width:100%; height:auto}
   .hero .stack{position:absolute; left:0; right:0; bottom:40px;
@@ -101,7 +101,7 @@
   @media (max-width:720px){
     /* stack the hero: photo on top, text below it (over the dark bg), then the chain */
     .hero{height:auto; min-height:0; overflow:visible; display:flex; flex-direction:column}
-    .hero .photo{position:static; width:100%; height:52svh; object-position:center 22%}
+    .hero .photo{position:static; width:100%; height:52svh; object-position:center bottom}
     .hero .protect{display:none}
     /* cloud-steps stays an absolute overlay on the photo's top, as on desktop */
     .hero .stack{position:static; padding:32px 24px 40px}
@@ -138,13 +138,13 @@
 
 <!-- HERO -->
 <header class="hero">
-  <img class="photo" src="assets/photos/camp-sheep.jpg" alt="Carrying a churro lamb at the camp">
+  <img class="photo" src="assets/photos/hero-carrizo-ram.jpg" alt="A spotted, long-horned Navajo-Churro ram resting in the corral, its long fleece in the sun">
   <div class="protect"></div>
   <img class="heavens" src="assets/brand/cloud-steps.svg" alt="">
   <div class="stack">
     <h1>Shaped from clouds, given breath</h1>
     <div class="eyebrow">AS THE ELDERS TELL IT — THE FIRST SHEEP</div>
-    <p class="lede">In Diné tradition the Holy People made the first sheep — a body molded from clouds, bones of straight willow, horns and hooves shaped from a rainbow, a face of dawn, eyes of rock crystal, ears made from tobacco — then breathed life into them. Those first sheep are the <b>Navajo-Churro</b>, the breed this camp still raises today — inside that same story.</p>
+    <p class="lede">In Diné tradition the Holy People made the first sheep — a body molded from clouds, bones of straight willow, horns and hooves shaped from a rainbow, a face of dawn, eyes of rock crystal, ears made from tobacco — then breathed life into them. Those first sheep are the <b>Navajo-Churro</b>, the breed this camp still raises today.</p>
     <div class="seal"><img src="assets/brand/cloud-mark.svg" alt=""></div>
     <div class="actions">
       <a class="btn btn-solid btn-lg" href="support.html">Support the Camp</a>

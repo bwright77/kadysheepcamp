@@ -189,7 +189,9 @@ a:hover{color:var(--rust-hover)}
 
 /* ---- shared responsive ---- */
 @media (max-width:900px){ .site-nav .menu{gap:18px; font-size:13px} }
-@media (max-width:720px){
+/* also collapse to the mobile layout on short viewports — i.e. phones in landscape,
+   which are wider than 720px but too short for the desktop nav/hero */
+@media (max-width:720px), (max-height:520px){
   .site-nav{flex-wrap:wrap; gap:12px 16px; padding:16px 22px; align-items:center}
   .site-nav .brand{order:1; flex:1 1 0; min-width:0}          /* basis 0 → fits beside toggle, then grows; wordmark wraps */
   .site-nav .brand > :last-child{min-width:0}                 /* let the wordmark column wrap */

@@ -176,6 +176,9 @@ a:hover{color:var(--rust-hover)}
 .site-footer .foot-links a{color:var(--wheat)}
 .site-footer .foot-links a:hover{color:var(--rust-hover)}
 .site-footer .foot-meta{font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--text-muted-on-dark)}
+.site-footer .foot-meta .credit{display:inline-block; margin-top:5px}
+.site-footer .foot-meta .credit a{color:var(--wheat)}
+.site-footer .foot-meta .credit a:hover{color:var(--bone)}
 
 /* ---- social icon bar (injected by site.js into footers + [data-social]) ---- */
 .social{display:flex; align-items:center; gap:16px; margin-top:14px}
